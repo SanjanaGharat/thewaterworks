@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Responsive Navbar with Image Background</title>
+  <link href="./css/styles.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./script/script.js" defer></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+</head>
+
+<body class="font-sans bg-gray-50">
+
+<!-- Section with Logo, Call Number, and Schedule Now Button -->
+<section class="bg-cover bg-center py-6" style="background-image: url('https://media.istockphoto.com/id/1386705180/photo/abstract-blue-background.jpg?s=612x612&w=0&k=20&c=SyUgZ1hFRCk_WKuULnrSgEcytfo4udnhm4BALJTSEh8=');">
+  <div class="container mx-auto flex flex-wrap justify-between items-center px-4 lg:px-8">
+    <!-- Company Logo -->
+    <div class="w-full lg:w-auto flex justify-center lg:justify-start mb-4 lg:mb-0">
+      <img src="https://thewaterworks.com/wp-content/uploads/2022/06/ww-low.png" alt="Company Logo" class="h-12 max-w-full object-contain">
+    </div>
+
+    <!-- Contact and Schedule Now -->
+    <div class="w-full lg:w-auto flex flex-col lg:flex-row items-center lg:space-x-6 text-center lg:text-left">
+      <!-- Phone Number -->
+      <div class="text-white text-lg mb-4 lg:mb-0">
+        <a href="tel:+1234567890" class="hover:text-black font-medium">+1 (234) 567-890</a>
+      </div>
+      
+
+      <!-- Schedule Now Button -->
+      <a href="#schedule-now" 
+        class="bg-yellowDark border-2 border-yellowBorder text-white px-6 py-2 rounded-full hover:bg-yellowLight hover:border-yellowLight hover:text-black">
+        Schedule Now
+      </a>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Navbar -->
+<nav class="bg-bgColorDark  text-white sticky top-0 z-50">
+    <div class="container mx-auto flex items-center justify-between py-4 px-4">
+      <!-- Navbar Links (Center Aligned for Large Screens) -->
+      <div class="hidden lg:flex space-x-8 items-center justify-center w-full text-lg">
+        <a href="#" class="hover:text-bgBlueHover">Home</a>
+        <span>|</span>
+        <div class="relative group">
+          <button class="hover:text-bgBlueHover flex items-center space-x-2">
+            <span>About Us</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <!-- Dropdown -->
+          <div class="absolute left-1/2 -translate-x-1/2 mt-2 hidden group-hover:block bg-white text-black shadow-lg rounded-lg py-2 dropdown-content">
+            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Our Team</a>
+            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Our Story</a>
+          </div>
+        </div>
+        <span>|</span>
+        <div class="relative group">
+          <button class="hover:text-bgBlueHover flex items-center space-x-2">
+            <span>Services</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <!-- Dropdown -->
+          <div class="absolute left-1/2 -translate-x-1/2 mt-2 hidden group-hover:block bg-white text-black shadow-lg rounded-lg py-2 dropdown-content">
+            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Service 1</a>
+            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Service 2</a>
+            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Service 3</a>
+          </div>
+        </div>
+        <span>|</span>
+        <div class="relative group">
+          <button class="hover:text-bgBlueHover flex items-center space-x-2">
+            <span>Contact Us</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <!-- Dropdown -->
+          <div class="absolute left-1/2 -translate-x-1/2 mt-2 hidden group-hover:block bg-white text-black shadow-lg rounded-lg py-2 dropdown-content">
+            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Support</a>
+            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Help Center</a>
+          </div>
+        </div>
+        <span>|</span>
+        <a href="#" class="hover:text-bgBlueHover">Careers</a>
+      </div>
+
+      <!-- Hamburger Icon (Aligned to the Right) -->
+      <button id="menu-toggle" class="lg:hidden ml-auto">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Sidebar (Hidden by Default) -->
+<div id="sidebar-overlay" class="fixed top-0 left-0 w-full h-full bg-black opacity-50 z-40 hidden"></div>
+  <div id="sidebar" class="fixed top-0 left-0 w-64 bg-bgColorDark h-full text-white transform -translate-x-full transition-transform lg:hidden z-50">
+  <button id="sidebar-close" class="absolute top-4 right-4">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+  <div class="mt-20 px-6">
+    <a href="#" class="block py-2 hover:text-bgBlueHover">Home</a>
+
+    <!-- Dropdown About Us -->
+    <div class="mt-4">
+      <button class="flex items-center justify-between w-full py-2 hover:text-bgBlueHover" data-dropdown="about">
+        <span class="text-left">About Us</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div id="dropdown-about" class="pl-4 hidden">
+        <a href="#" class="block py-2 hover:text-bgBlueHover">Our Team</a>
+        <a href="#" class="block py-2 hover:text-bgBlueHover">Our Story</a>
+      </div>
+    </div>
+
+    <!-- Dropdown Services -->
+    <div class="mt-4">
+      <button class="flex items-center justify-between w-full py-2 hover:text-bgBlueHover" data-dropdown="services">
+        <span class="text-left">Services</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div id="dropdown-services" class="pl-4 hidden">
+        <a href="#" class="block py-2 hover:text-bgBlueHover">Service 1</a>
+        <a href="#" class="block py-2 hover:text-bgBlueHover">Service 2</a>
+        <a href="#" class="block py-2 hover:text-bgBlueHover">Service 3</a>
+      </div>
+    </div>
+
+    <!-- Dropdown Contact Us -->
+    <div class="mt-4">
+      <button class="flex items-center justify-between w-full py-2 hover:text-bgBlueHover" data-dropdown="contact">
+        <span class="text-left">Contact Us</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div id="dropdown-contact" class="pl-4 hidden">
+        <a href="#" class="block py-2 hover:text-bgBlueHover">Support</a>
+        <a href="#" class="block py-2 hover:text-bgBlueHover">Help Center</a>
+      </div>
+    </div>
+
+    <a href="#" class="mt-4 block py-2 hover:text-bgBlueHover">Careers</a>
+  </div>
+</div>
+
+<!-- Hero Section -->
+<section class="relative bg-cover bg-center flex flex-col justify-center text-white pb-0 px-4 pt-24 md:pt-10 h-auto md:h-[80vh] min-h-[500px]" style="background-image: url('https://media.istockphoto.com/id/1221025677/photo/abstract-blue-background-minimal-geometric-background-for-use-in-design.jpg?s=612x612&w=0&k=20&c=anpqkv5H6BGc190yQU0riwViQIUcNUQjhLLMRpbFOEE='); font-family: 'Poppins', sans-serif;">
+  <!-- Blue Tint Overlay -->
+  <div class="absolute inset-0 bg-gradient-to-r from-bgColorDark via-bgColorLight to-bgColorDark opacity-50"></div>
+
+  <!-- Hero Content -->
+  <div class="relative z-10 w-full text-left">
+    <!-- Typing Animation -->
+    <h1 id="typing-text" class="text-3xl md:text-5xl font-bold mb-4 drop-shadow-lg text-center md:text-left">
+      <!-- Dynamic Typing Text -->
+    </h1>
+
+    <!-- Second Line -->
+    <h2 id="second-line" class="text-2xl md:text-4xl font-medium mb-10 drop-shadow-lg opacity-0 transition-opacity duration-500 text-center md:text-left">
+      How Can We Help?
+    </h2>
+
+    <!-- Service Icons Section -->
+    <div class="flex flex-col md:flex-row justify-center gap-8 mb-12">
+      <!-- Plumbing -->
+      <a href="/plumbing" class="group flex flex-col items-center transition-transform transform hover:scale-110">
+        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center transition-all group-hover:rotate-[360deg] group-hover:duration-500 rotate-360">
+          <img src="https://thewaterworks.com/wp-content/uploads/2022/06/plumbing-slider-icon2.png" alt="Plumbing" class="w-20 h-20 md:w-24 md:h-24">
+        </div>
+        <p class="mt-3 text-sm md:text-md font-semibold group-hover:text-bgBlueHover" style="font-family: 'Roboto', sans-serif;">Plumbing</p>
+      </a>
+
+      <!-- Drain -->
+      <a href="/drain" class="group flex flex-col items-center transition-transform transform hover:scale-110">
+        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center transition-all group-hover:rotate-[360deg] group-hover:duration-500 rotate-360">
+          <img src="https://thewaterworks.com/wp-content/uploads/2022/06/drain-slider-icon.png" alt="Drain" class="w-20 h-20 md:w-24 md:h-24">
+        </div>
+        <p class="mt-3 text-sm md:text-md font-semibold group-hover:text-bgBlueHover" style="font-family: 'Roboto', sans-serif;">Drain</p>
+      </a>
+
+      <!-- Heating & Cooling -->
+      <a href="/heating-cooling" class="group flex flex-col items-center transition-transform transform hover:scale-110">
+        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center transition-all group-hover:rotate-[360deg] group-hover:duration-500 rotate-360">
+          <img src="https://thewaterworks.com/wp-content/uploads/2022/06/heating-slider-icon.png" alt="Heating & Cooling" class="w-20 h-20 md:w-24 md:h-24">
+        </div>
+        <p class="mt-3 text-sm md:text-md font-semibold group-hover:text-bgBlueHover" style="font-family: 'Roboto', sans-serif;">Heating & Cooling</p>
+      </a>
+    </div>
+
+    <!-- Subheading -->
+<div class="bg-bgColorLight py-4 px-2 drop-shadow-lg mx-auto w-full text-center mt-16 overflow-hidden lg:mb-0 mb-2 relative">
+  <!-- Marquee for larger screens -->
+  <div 
+    id="marquee-container"
+    class="marquee-container text-sm md:text-lg font-semibold text-bgColorDark"
+    style="font-family: 'Montserrat', sans-serif;">
+    <div class="marquee-text-wrapper">
+      <div class="marquee-text">Plumbing & HVAC Services in Columbus, Ohio &emsp;&emsp;</div>
+      <div class="marquee-text">Plumbing & HVAC Services in Columbus, Ohio &emsp;&emsp;</div>
+    </div>
+  </div>
+
+  <!-- Static text for smaller screens -->
+  <div 
+    id="static-text"
+    class="text-sm font-semibold text-bgColorDark"
+    style="font-family: 'Montserrat', sans-serif;">
+    Plumbing & HVAC Services in Columbus, Ohio
+  </div>
+</div>
+
+  </div>
+</section>
+
+
+<!-- Services Section -->
+<section class="bg-white py-12 px-4 md:px-8 lg:px-16" style="font-family: 'Poppins', sans-serif;">
+    <!-- Section Header -->
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-bgColorDark">
+      Our Services
+    </h2>
+  
+    <!-- Service Categories -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Residential Services -->
+      <div class="bg-white border-2 border-yellowDark text-black shadow-lg p-6 transition-transform transform hover:scale-105 mx-auto w-full sm:w-4/5 md:w-3/5 lg:w-full">
+        <!-- Image inside the card -->
+        <div class="w-full mb-4 flex justify-center">
+          <img src="https://thewaterworks.com/wp-content/uploads/2022/10/residential-greenblend.png" 
+               alt="Residential Services" 
+               class="w-3/4 max-w-[200px] object-contain mx-auto">
+        </div>
+        <h3 class="text-2xl font-semibold mb-4 text-center">Residential Services</h3>
+  
+        <p class="text-sm md:text-md mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget posuere nunc. Etiam facilisis auctor dui, eu vehicula leo mollis eu. Duis tempus justo eu placerat sodales.
+             Vestibulum in nibh sed urna semper accumsan et ac risus. In eleifend maximus volutpat.        </p>
+        <ul class="list-disc pl-5 mb-6">
+          <li>Drain & Clogs</li>
+          <li>Faucets & Leaks</li>
+          <li>Hot Water Heaters</li>
+          <li>Sump Pumps</li>
+          <li>Sewer Lines</li>
+          <li>Backflow</li>
+          <li>Water Treatment</li>
+          <li>Furnace & AC Tuneups</li>
+          <li>New HVAC Installations</li>
+        </ul>
+        <div class="text-center">
+          <a href="#" 
+             class="text-sm md:text-md font-semibold text-white bg-bgColorDark hover:bg-bgColorLight rounded-lg py-2 px-4 transition-colors duration-300">
+            Find out more
+          </a>
+        </div>
+      </div>
+  
+      <!-- Commercial & Industrial Services -->
+      <div class="bg-white border-2 border-yellowDark text-black shadow-lg p-6 transition-transform transform hover:scale-105 mx-auto w-full sm:w-4/5 md:w-3/5 lg:w-full">
+        <!-- Image inside the card -->
+        <div class="w-full mb-4 flex justify-center">
+          <img src="https://thewaterworks.com/wp-content/uploads/2022/11/commercial-orangeblend.png" 
+               alt="Commercial & Industrial Services" 
+               class="w-3/4 max-w-[200px] object-contain mx-auto">
+        </div>    
+        <h3 class="text-2xl font-semibold mb-4 text-center">Commercial & Industrial Services</h3>
+  
+        <p class="text-sm md:text-md mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget posuere nunc. Etiam facilisis auctor dui, eu vehicula leo mollis eu. Duis tempus justo eu placerat sodales. 
+            Vestibulum in nibh sed urna semper accumsan et ac risus. In eleifend maximus volutpat.        </p>
+        <ul class="list-disc pl-5 mb-6">
+          <li>Hydro-Excavation & -Jetting</li>
+          <li>PipeLining & Patching</li>
+          <li>Catch Basins & Storm Sewers</li>
+          <li>Lift Stations</li>
+          <li>Wells & Pumps</li>
+          <li>Grease Traps & FOG</li>
+          <li>Testing & Certification</li>
+          <li>Heavy-Duty HVAC Need</li>
+        </ul>
+        <div class="text-center">
+          <a href="#" 
+             class="text-sm md:text-md font-semibold text-white bg-bgColorDark hover:bg-bgColorLight rounded-lg py-2 px-4 transition-colors duration-300">
+            Find out more
+          </a>
+        </div>
+      </div>
+  
+      <!-- Municipal Services -->
+      <div class="bg-white border-2 border-yellowDark text-black shadow-lg p-6 transition-transform transform hover:scale-105 mx-auto w-full sm:w-4/5 md:w-3/5 lg:w-full">
+        <!-- Image inside the card -->
+        <div class="w-full mb-4 flex justify-center">
+          <img src="https://thewaterworks.com/wp-content/uploads/2022/11/municipal_blueblend.png" 
+               alt="Municipal Services" 
+               class="w-3/4 max-w-[200px] object-contain mx-auto">
+        </div>
+        <h3 class="text-2xl font-semibold mb-4 text-center">Municipal Services</h3>
+  
+        <p class="text-sm md:text-md mb-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget posuere nunc. Etiam facilisis auctor dui, eu vehicula leo mollis eu. Duis tempus justo eu placerat sodales. 
+            Vestibulum in nibh sed urna semper accumsan et ac risus. In eleifend maximus volutpat.        </p>
+        <ul class="list-disc pl-5 mb-6">
+          <li>Sewer, Water & Gas Lines</li>
+          <li>Hydro-Excavation</li>
+          <li>Backflow Prevention</li>
+          <li>Water Treatment Systems</li>
+          <li>Under-Road Pipeline Work</li>
+          <li>Fire Hydrants</li>
+          <li>Parks, Pools & Stadiums</li>
+          <li>Public Fountains & Toilets</li>
+          <li>Aging Infrastructure</li>
+        </ul>
+        <div class="text-center">
+          <a href="#" 
+             class="text-sm md:text-md font-semibold text-white bg-bgColorDark hover:bg-bgColorLight rounded-lg py-2 px-4 transition-colors duration-300">
+            Find out more
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Why Choose Us Section -->
+<section class="relative flex items-center min-h-screen sm:min-h-[60vh] md:min-h-[70vh] lg:min-h-[40hv]" id="custom-section">
+  <!-- Background image -->
+  <div class="absolute inset-0" id="bg-image-container">
+    <div class="w-full h-full bg-gradient-to-r from-black via-black/70 to-transparent absolute" id="gradient-overlay"></div>
+    <img src="https://media.istockphoto.com/id/1339076397/photo/blue-background-watercolor.jpg?s=612x612&w=0&k=20&c=r7vtfNFOdn8Zldl4yNAL864SirPnIIj32K4Epuo42WA=" alt="Pipe Image" class="w-full h-full object-cover" id="background-image">
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 container mx-auto px-6 lg:px-12 py-16" id="content-container">
+    <div class="max-w-4xl text-center mx-auto" id="section-heading"> <!-- Center content horizontally -->
+      <h2 class="text-4xl font-bold text-white mb-6" id="main-heading">Why Choose Us?</h2>
+      <p class="text-xl font-semibold mb-8 text-white bg-gradient-to-r from-blueAccent to-bgBlueHover hover:from-bgBlueHover hover:to-blueAccent rounded-full px-6 py-3 inline-block shadow-lg transform hover:scale-105 transition-transform duration-300" id="intro-paragraph">
+        Better care. Better value. Better results.™
+      </p>
+    </div>
+
+    <!-- Features -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6" id="feature-grid">
+      <!-- Feature item -->
+      <div class="flex items-start sm:items-center" id="feature-1">
+        <span class="flex items-center justify-center w-12 h-12 min-w-[3rem] min-h-[3rem] bg-yellowDark text-black font-bold rounded-full mr-4 box-border" id="feature-icon-1">1</span>
+        <div id="feature-content-1">
+          <h3 class="text-xl font-semibold text-yellowLight" id="feature-title-1">Fast Response</h3>
+          <p class="text-grayLight" id="feature-description-1">150+ Employees And 80+ Service Vehicles</p>
+        </div>
+      </div>
+
+      <div class="flex items-start sm:items-center" id="feature-2">
+        <span class="flex items-center justify-center w-12 h-12 min-w-[3rem] min-h-[3rem] bg-yellowDark text-black font-bold rounded-full mr-4 box-border" id="feature-icon-2">2</span>
+        <div id="feature-content-2">
+          <h3 class="text-xl font-semibold text-yellowLight" id="feature-title-2">Deep Expertise</h3>
+          <p class="text-grayLight" id="feature-description-2">Highly-Trained, Certified, Licensed Technicians</p>
+        </div>
+      </div>
+
+      <div class="flex items-start sm:items-center" id="feature-3">
+        <span class="flex items-center justify-center w-12 h-12 min-w-[3rem] min-h-[3rem] bg-yellowDark text-black font-bold rounded-full mr-4 box-border" id="feature-icon-3">3</span>
+        <div id="feature-content-3">
+          <h3 class="text-xl font-semibold text-yellowLight" id="feature-title-3">Great Guarantees</h3>
+          <p class="text-grayLight" id="feature-description-3">On Select Installations</p>
+        </div>
+      </div>
+
+      <div class="flex items-start sm:items-center" id="feature-4">
+        <span class="flex items-center justify-center w-12 h-12 min-w-[3rem] min-h-[3rem] bg-yellowDark text-black font-bold rounded-full mr-4 box-border" id="feature-icon-4">4</span>
+        <div id="feature-content-4">
+          <h3 class="text-xl font-semibold text-yellowLight" id="feature-title-4">Superior Service</h3>
+          <p class="text-grayLight" id="feature-description-4">Before, During, And After The Job Is Done</p>
+        </div>
+      </div>
+
+      <div class="flex items-start sm:items-center" id="feature-5">
+        <span class="flex items-center justify-center w-12 h-12 min-w-[3rem] min-h-[3rem] bg-yellowDark text-black font-bold rounded-full mr-4 box-border" id="feature-icon-5">5</span>
+        <div id="feature-content-5">
+          <h3 class="text-xl font-semibold text-yellowLight" id="feature-title-5">Convenience</h3>
+          <p class="text-grayLight" id="feature-description-5">One Company For All Plumbing & HVAC</p>
+        </div>
+      </div>
+
+      <div class="flex items-start sm:items-center" id="feature-6">
+        <span class="flex items-center justify-center w-12 h-12 min-w-[3rem] min-h-[3rem] bg-yellowDark text-black font-bold rounded-full mr-4 box-border" id="feature-icon-6">6</span>
+        <div id="feature-content-6">
+          <h3 class="text-xl font-semibold text-yellowLight" id="feature-title-6">12,000+ Reviews</h3>
+          <p class="text-grayLight" id="feature-description-6">View Our Customers' Reviews</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+</body>
+
+</html>
