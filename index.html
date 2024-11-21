@@ -43,11 +43,28 @@
 </section>
 
   <!-- Navbar -->
-<nav class="bg-bgColorDark  text-white sticky top-0 z-50">
+  <nav class="bg-bgColorDark  text-white sticky top-0 z-50">
     <div class="container mx-auto flex items-center justify-between py-4 px-4">
       <!-- Navbar Links (Center Aligned for Large Screens) -->
       <div class="hidden lg:flex space-x-8 items-center justify-center w-full text-lg">
         <a href="#" class="hover:text-bgBlueHover">Home</a>
+        <span>|</span>
+
+        <div class="relative group">
+          <button class="hover:text-bgBlueHover flex items-center space-x-2">
+            <span>Services</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <!-- Dropdown -->
+          <div class="absolute left-1/2 -translate-x-1/2 mt-2 hidden group-hover:block bg-white text-black shadow-lg rounded-lg py-2 dropdown-content">
+            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Service 1</a>
+            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Service 2</a>
+            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Service 3</a>
+          </div>
+        </div>
+        
         <span>|</span>
         <div class="relative group">
           <button class="hover:text-bgBlueHover flex items-center space-x-2">
@@ -63,34 +80,7 @@
           </div>
         </div>
         <span>|</span>
-        <div class="relative group">
-          <button class="hover:text-bgBlueHover flex items-center space-x-2">
-            <span>Services</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <!-- Dropdown -->
-          <div class="absolute left-1/2 -translate-x-1/2 mt-2 hidden group-hover:block bg-white text-black shadow-lg rounded-lg py-2 dropdown-content">
-            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Service 1</a>
-            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Service 2</a>
-            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Service 3</a>
-          </div>
-        </div>
-        <span>|</span>
-        <div class="relative group">
-          <button class="hover:text-bgBlueHover flex items-center space-x-2">
-            <span>Contact Us</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <!-- Dropdown -->
-          <div class="absolute left-1/2 -translate-x-1/2 mt-2 hidden group-hover:block bg-white text-black shadow-lg rounded-lg py-2 dropdown-content">
-            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Support</a>
-            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Help Center</a>
-          </div>
-        </div>
+        <a href="./pages/contact.html" class="hover:text-bgBlueHover">Contact</a>
         <span>|</span>
         <a href="#" class="hover:text-bgBlueHover">Careers</a>
       </div>
@@ -115,20 +105,6 @@
   <div class="mt-20 px-6">
     <a href="#" class="block py-2 hover:text-bgBlueHover">Home</a>
 
-    <!-- Dropdown About Us -->
-    <div class="mt-4">
-      <button class="flex items-center justify-between w-full py-2 hover:text-bgBlueHover" data-dropdown="about">
-        <span class="text-left">About Us</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      <div id="dropdown-about" class="pl-4 hidden">
-        <a href="#" class="block py-2 hover:text-bgBlueHover">Our Team</a>
-        <a href="#" class="block py-2 hover:text-bgBlueHover">Our Story</a>
-      </div>
-    </div>
-
     <!-- Dropdown Services -->
     <div class="mt-4">
       <button class="flex items-center justify-between w-full py-2 hover:text-bgBlueHover" data-dropdown="services">
@@ -144,23 +120,27 @@
       </div>
     </div>
 
-    <!-- Dropdown Contact Us -->
+    <!-- Dropdown About Us -->
     <div class="mt-4">
-      <button class="flex items-center justify-between w-full py-2 hover:text-bgBlueHover" data-dropdown="contact">
-        <span class="text-left">Contact Us</span>
+      <button class="flex items-center justify-between w-full py-2 hover:text-bgBlueHover" data-dropdown="about">
+        <span class="text-left">About Us</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
         </svg>
       </button>
-      <div id="dropdown-contact" class="pl-4 hidden">
-        <a href="#" class="block py-2 hover:text-bgBlueHover">Support</a>
-        <a href="#" class="block py-2 hover:text-bgBlueHover">Help Center</a>
+      <div id="dropdown-about" class="pl-4 hidden">
+        <a href="#" class="block py-2 hover:text-bgBlueHover">Our Team</a>
+        <a href="#" class="block py-2 hover:text-bgBlueHover">Our Story</a>
       </div>
     </div>
+
+    <a href="./pages/contact.html" class="mt-4 block py-2 hover:text-bgBlueHover">Contact</a>
+  
 
     <a href="#" class="mt-4 block py-2 hover:text-bgBlueHover">Careers</a>
   </div>
 </div>
+
 
 <!-- Hero Section -->
 <section class="relative bg-cover bg-center flex flex-col justify-center text-white pb-0 px-4 pt-24 md:pt-10 h-auto md:h-[80vh] min-h-[500px]" style="background-image: url('https://media.istockphoto.com/id/1221025677/photo/abstract-blue-background-minimal-geometric-background-for-use-in-design.jpg?s=612x612&w=0&k=20&c=anpqkv5H6BGc190yQU0riwViQIUcNUQjhLLMRpbFOEE='); font-family: 'Poppins', sans-serif;">
@@ -596,9 +576,9 @@
   
       <!-- Text Section -->
       <div id="careers-text-container" class="w-full md:w-1/2 text-center md:text-left space-y-6 opacity-0 translate-y-10 transition-all duration-1000 ease-out">
-        <h1 id="careers-heading" class="text-4xl sm:text-5xl font-extrabold text-bgColorDark leading-tight">
+        <h2 id="careers-heading" class="text-4xl sm:text-5xl font-extrabold text-bgColorDark leading-tight">
           Great Careers
-        </h1>
+        </h2>
         <p id="careers-description" class="text-lg sm:text-xl text-grayDark leading-relaxed">
           Explore job openings, apprenticeships, and enjoy 100% paid healthcare premiums. Join a team that values growth and innovation.
         </p>
@@ -614,75 +594,81 @@
   </section>
 
 
-  <!-- Footer Section starts -->
-  <div class="flex flex-col">
+<!-- Footer Section starts -->
+<div class="flex flex-col">
 
-    <!-- Footer Section at the End of the Page -->
-    <footer class="bg-bgColorDark text-center py-10">
-      <div class="max-w-screen-xl mx-auto px-4">
-        <!-- Footer Grid Layout -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-  
-          <!-- Brand Section with Logo -->
-          <div class="text-center sm:text-left text-white">
-            <!-- Company Logo -->
-            <img src="https://thewaterworks.com/wp-content/uploads/2022/06/ww-low.png" alt="Company Logo" class="w-32 mx-auto sm:mx-0">
-            <p class="mt-2 text-sm text-grayLight">Empowering your business with innovative solutions.</p>
-          </div>
-  
-          <!-- Quick Links Section -->
-          <div class="text-center sm:text-left text-white">
-            <h4 class="text-lg font-semibold text-yellowLight">Quick Links</h4>
-            <ul class="mt-2 space-y-2">
-              <li><a href="../index.html" class="hover:text-yellowLight">Home</a></li>
-              <li><a href="./pages/about.html" class="hover:text-yellowLight">About Us</a></li>
-              <li><a href="./pages/services.html" class="hover:text-yellowLight">Services</a></li>
-              <li><a href="./serviceareas.html" class="hover:text-yellowLight">Careers</a></li>
-              <li><a href="./pages/contact.html" class="hover:text-yellowLight">Contact</a></li>
-            </ul>
-          </div>
-  
-          <!-- Contact Us Section -->
-          <div class="text-center sm:text-left text-white">
-            <h4 class="text-lg font-semibold text-yellowLight">Contact Us</h4>
-            <p class="mt-2 text-sm">123 Main Street, Suite 500</p>
-            <p class="mt-2 text-sm">City, State, ZIP</p>
-            <p class="mt-2 text-sm">Email: <a href="mailto:contact@company.com" class="text-yellowLight">contact@company.com</a></p>
-            <p class="mt-2 text-sm">Phone: +1 (123) 456-7890</p>
-          </div>
-  
-          <!-- Social Media Section -->
-          <div class="text-center sm:text-left text-white">
-            <h5 class="text-lg font-semibold text-yellowLight">Follow Us</h5>
-            <div class="mt-4 flex justify-center sm:justify-start space-x-6">
-              <a href="https://facebook.com" target="_blank" class="text-grayLight hover:text-yellowLight text-3xl">
-                <i class="fab fa-facebook-square"></i>
-              </a>
-              <a href="https://twitter.com" target="_blank" class="text-grayLight hover:text-yellowLight text-3xl">
-                <i class="fab fa-twitter-square"></i>
-              </a>
-              <a href="https://linkedin.com" target="_blank" class="text-grayLight hover:text-yellowLight text-3xl">
-                <i class="fab fa-linkedin"></i>
-              </a>
-              <a href="https://instagram.com" target="_blank" class="text-grayLight hover:text-yellowLight text-3xl">
-                <i class="fab fa-instagram-square"></i>
-              </a>
-            </div>
+  <!-- Footer Section at the End of the Page -->
+  <footer class="bg-bgColorDark text-center py-10">
+    <div class="max-w-screen-xl mx-auto px-4">
+      <!-- Footer Grid Layout -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+
+        <!-- Brand Section with Logo -->
+        <div class="text-center sm:text-left text-white">
+          <!-- Company Logo -->
+          <img src="https://thewaterworks.com/wp-content/uploads/2022/06/ww-low.png" alt="Company Logo" class="w-32 mx-auto sm:mx-0">
+          <p class="mt-2 text-sm text-grayLight">Empowering your business with innovative solutions.</p>
+          <!-- 24/7 Badge -->
+          <div class="mt-4 flex justify-center sm:justify-start">
+            <img src="https://thewaterworks.com/wp-content/uploads/2022/05/247button_orange.png" alt="24/7 Badge" class="w-20 h-20 object-contain">
           </div>
         </div>
-  
-        <!-- Footer Bottom Section -->
-        <div class="border-t border-grayLight pt-4">
-          <div class="flex justify-center items-center">
-            <p class="text-sm text-white">© 2024 Your Company. All rights reserved.</p>
-            <a href="./pages/privacy.html" class="text-sm text-white mx-2">| Privacy Policy</a>
-            <a href="./pages/terms.html" class="text-sm text-white">| Terms & Conditions</a>
+
+        <!-- Quick Links Section -->
+        <div class="text-center sm:text-left text-white">
+          <h4 class="text-lg font-semibold text-yellowLight">Quick Links</h4>
+          <ul class="mt-2 space-y-2">
+            <li><a href="../index.html" class="hover:text-yellowLight">Home</a></li>
+            <li><a href="./pages/services.html" class="hover:text-yellowLight">Services</a></li>
+            <li><a href="./pages/about.html" class="hover:text-yellowLight">About Us</a></li>
+            <li><a href="./pages/contact.html" class="hover:text-yellowLight">Contact</a></li>
+            <li><a href="./serviceareas.html" class="hover:text-yellowLight">Careers</a></li>
+            
+          </ul>
+        </div>
+
+        <!-- Contact Us Section -->
+        <div class="text-center sm:text-left text-white">
+          <h4 class="text-lg font-semibold text-yellowLight">Contact Us</h4>
+          <p class="mt-2 text-sm">123 Main Street, Suite 500</p>
+          <p class="mt-2 text-sm">City, State, ZIP</p>
+          <p class="mt-2 text-sm">Email: <a href="mailto:contact@company.com" class="text-yellowLight">contact@company.com</a></p>
+          <p class="mt-2 text-sm">Phone: +1 (123) 456-7890</p>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="text-center sm:text-left text-white">
+          <h5 class="text-lg font-semibold text-yellowLight">Follow Us</h5>
+          <div class="mt-4 flex justify-center sm:justify-start space-x-6">
+            <a href="https://facebook.com" target="_blank" class="text-grayLight hover:text-yellowLight text-3xl">
+              <i class="fab fa-facebook-square"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="text-grayLight hover:text-yellowLight text-3xl">
+              <i class="fab fa-twitter-square"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="text-grayLight hover:text-yellowLight text-3xl">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="text-grayLight hover:text-yellowLight text-3xl">
+              <i class="fab fa-instagram-square"></i>
+            </a>
           </div>
         </div>
-  
       </div>
-    </footer>
-  </div>
+
+      <!-- Footer Bottom Section -->
+      <div class="border-t border-grayLight pt-4">
+        <div class="flex justify-center items-center">
+          <p class="text-sm text-white">© 2024 Your Company. All rights reserved.</p>
+          <a href="./pages/privacy.html" class="text-sm text-white mx-2">| Privacy Policy</a>
+          <a href="./pages/terms.html" class="text-sm text-white">| Terms & Conditions</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+</div>
+
   
   <!-- Footer Section ends -->
   

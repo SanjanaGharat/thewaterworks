@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>thewaterworks</title>
+  <link rel="stylesheet" href="../css/styles.css" >
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="pages.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+
+</head>
+
+<body class="font-sans bg-gray-50">
+
+<!-- Section with Logo, Call Number, and Schedule Now Button -->
+<section class="bg-cover bg-center py-6" style="background-image: url('https://media.istockphoto.com/id/1386705180/photo/abstract-blue-background.jpg?s=612x612&w=0&k=20&c=SyUgZ1hFRCk_WKuULnrSgEcytfo4udnhm4BALJTSEh8=');">
+  <div class="container mx-auto flex flex-wrap justify-between items-center px-4 lg:px-8">
+    <!-- Company Logo -->
+    <div class="w-full lg:w-auto flex justify-center lg:justify-start mb-4 lg:mb-0">
+      <img src="https://thewaterworks.com/wp-content/uploads/2022/06/ww-low.png" alt="Company Logo" class="h-12 max-w-full object-contain">
+    </div>
+
+    <!-- Contact and Schedule Now -->
+    <div class="w-full lg:w-auto flex flex-col lg:flex-row items-center lg:space-x-6 text-center lg:text-left">
+      <!-- Phone Number -->
+      <div class="text-white text-lg mb-4 lg:mb-0">
+        <a href="tel:+1234567890" class="hover:text-black font-medium">+1 (234) 567-890</a>
+      </div>
+      
+
+      <!-- Schedule Now Button -->
+      <a href="#schedule-now" 
+        class="bg-yellowDark border-2 border-yellowBorder text-white px-6 py-2 rounded-full hover:bg-yellowLight hover:border-yellowLight hover:text-black">
+        Schedule Now
+      </a>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Navbar -->
+<nav class="bg-bgColorDark  text-white sticky top-0 z-50">
+    <div class="container mx-auto flex items-center justify-between py-4 px-4">
+      <!-- Navbar Links (Center Aligned for Large Screens) -->
+      <div class="hidden lg:flex space-x-8 items-center justify-center w-full text-lg">
+        <a href="../index.html" class="hover:text-bgBlueHover">Home</a>
+        <span>|</span>
+
+        <div class="relative group">
+          <button class="hover:text-bgBlueHover flex items-center space-x-2">
+            <span>Services</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <!-- Dropdown -->
+          <div class="absolute left-1/2 -translate-x-1/2 mt-2 hidden group-hover:block bg-white text-black shadow-lg rounded-lg py-2 dropdown-content">
+            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Service 1</a>
+            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Service 2</a>
+            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Service 3</a>
+          </div>
+        </div>
+        
+        <span>|</span>
+        <div class="relative group">
+          <button class="hover:text-bgBlueHover flex items-center space-x-2">
+            <span>About Us</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <!-- Dropdown -->
+          <div class="absolute left-1/2 -translate-x-1/2 mt-2 hidden group-hover:block bg-white text-black shadow-lg rounded-lg py-2 dropdown-content">
+            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Our Team</a>
+            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Our Story</a>
+          </div>
+        </div>
+        <span>|</span>
+        <a href="#" class="hover:text-bgBlueHover">Contact</a>
+        <span>|</span>
+        <a href="#" class="hover:text-bgBlueHover">Careers</a>
+      </div>
+
+      <!-- Hamburger Icon (Aligned to the Right) -->
+      <button id="menu-toggle" class="lg:hidden ml-auto">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Sidebar (Hidden by Default) -->
+<div id="sidebar-overlay" class="fixed top-0 left-0 w-full h-full bg-black opacity-50 z-40 hidden"></div>
+  <div id="sidebar" class="fixed top-0 left-0 w-64 bg-bgColorDark h-full text-white transform -translate-x-full transition-transform lg:hidden z-50">
+  <button id="sidebar-close" class="absolute top-4 right-4">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+  <div class="mt-20 px-6">
+    <a href="../index.html" class="block py-2 hover:text-bgBlueHover">Home</a>
+
+    <!-- Dropdown Services -->
+    <div class="mt-4">
+      <button class="flex items-center justify-between w-full py-2 hover:text-bgBlueHover" data-dropdown="services">
+        <span class="text-left">Services</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div id="dropdown-services" class="pl-4 hidden">
+        <a href="#" class="block py-2 hover:text-bgBlueHover">Service 1</a>
+        <a href="#" class="block py-2 hover:text-bgBlueHover">Service 2</a>
+        <a href="#" class="block py-2 hover:text-bgBlueHover">Service 3</a>
+      </div>
+    </div>
+
+    <!-- Dropdown About Us -->
+    <div class="mt-4">
+      <button class="flex items-center justify-between w-full py-2 hover:text-bgBlueHover" data-dropdown="about">
+        <span class="text-left">About Us</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div id="dropdown-about" class="pl-4 hidden">
+        <a href="#" class="block py-2 hover:text-bgBlueHover">Our Team</a>
+        <a href="#" class="block py-2 hover:text-bgBlueHover">Our Story</a>
+      </div>
+    </div>
+
+    <a href="#" class="mt-4 block py-2 hover:text-bgBlueHover">Contact</a>
+  
+
+    <a href="#" class="mt-4 block py-2 hover:text-bgBlueHover">Careers</a>
+  </div>
+</div>
+
+<section 
+    class="relative bg-cover bg-center h-[50vh] sm:h-[30vh] md:h-[40vh] max-h-[600px]" 
+    style="background-image: url('https://wallpapercave.com/uwp/uwp4560326.jpeg');"
+>
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+    <!-- Content -->
+    <div class="relative flex items-center justify-center text-center w-full h-full px-10 md:px-8 sm:px-5 py-10 md:py-20 sm:py-8">
+        <h1 class="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold leading-tight animate-fade-in">
+            Who are we?
+        </h1>
+    </div>
+</section>
+
+
+
+<!-- Animation Styles -->
+<style>
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 1.5s ease-out;
+    }
+</style>
+
+
+<!-- careers-section -->
+<section id="careers" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+  <div class="container mx-auto flex flex-col md:flex-row items-center justify-between space-y-12 md:space-y-0 md:space-x-12 px-6">
+    
+    <!-- Text Section -->
+    <div id="careers-text-container" class="w-full md:w-1/2 text-center md:text-left space-y-8 opacity-0 translate-y-10 transition-all duration-1000 ease-out">
+      <h2 id="careers-heading" class="text-2xl sm:text-3xl font-serif text-grayDark">
+        Plumbing, Drain & HVAC services. All from
+      </h2>
+      <h3 class="text-5xl sm:text-6xl font-bold text-bgColorDark leading-tight">
+        One Company
+      </h3>
+      <p id="careers-description" class="text-lg sm:text-xl text-grayDark font-sans tracking-tight leading-relaxed">
+        Delivering excellence and reliability every time. We're your trusted partner for all your plumbing, HVAC, and drainage needs.
+      </p>
+      <a
+        id="careers-cta-button"
+        href="#"
+        class="inline-block px-12 py-6 text-lg font-semibold text-white bg-gradient-to-r from-bgColorLight to-bgColorDark rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
+      >
+        Explore Now
+      </a>
+    </div>
+
+    <!-- Image Section -->
+    <div id="careers-image-container" class="w-full md:w-1/2 flex justify-center overflow-hidden rounded-lg transition-all duration-500 ease-in-out transform hover:scale-105 ">
+      <img
+        src="../ranch-hand.png"
+        alt="Hand holding wrench"
+        class="w-full h-auto object-cover rounded-lg max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg"
+      />
+    </div>
+    
+  </div>
+</section>
+
+
+  <section id="greensection" class="w-full bg-gradient-to-r from-greenGradientStart to-greenLight text-white px-6 py-16 text-center rounded-lg animate-gradient">
+    <p id="greensection-text" class="text-2xl sm:text-3xl md:text-4xl font-serif">
+      With a humble beginning as a small drain cleaning company in 1986, The Waterworks has grown into central Ohio’s leading plumbing, drain, heating, and cooling service provider.
+    </p>
+  </section>
+  
+<style>
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+#greensection {
+  background: linear-gradient(to right, #499278, #319e34, #47ab4c);
+  background-size: 300% 300%;
+  animation: gradientAnimation 8s ease infinite;
+}
+
+
+</style>  
+  
+
+<div class="bg-gradient-to-r from-bgColorDark to-bgBlueHover text-grayDark">
+  <section class="max-w-7xl mx-auto px-6 py-10 border-t border-b border-yellowBorder relative">
+    <div class="flex flex-col md:flex-row items-start gap-8">
+      <!-- Left Side with Logos -->
+      <div class="w-full md:w-1/3 flex justify-between items-center space-x-4">
+        <img src="https://thewaterworks.com/wp-content/uploads/2022/11/icons-600x192.png" alt="Logo 1" class="h-24 w-auto object-contain" />
+
+      </div>
+
+      <!-- Yellow Vertical Line (for larger screens) -->
+      <div class="hidden md:block absolute top-0 bottom-0 left-1/3 border-l border-yellowBorder"></div>
+
+      <!-- Right Side with Text and Button -->
+      <div class="w-full md:w-2/3 space-y-4">
+        <p class="text-lg sm:text-xl text-yellowDark font-sans tracking-tight leading-relaxed">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+        </p>
+        
+        <ul class="list-none space-y-3 text-white">
+          <li class="flex items-start">
+            <span class="h-4 w-4 flex-shrink-0 border border-yellowDark rounded-full mt-1"></span>
+            <p class="ml-4 text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="flex items-start">
+            <span class="h-4 w-4 flex-shrink-0 border border-yellowDark rounded-full mt-1"></span>
+            <p class="ml-4 text-lg">Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+          </li>
+          <li class="flex items-start">
+            <span class="h-4 w-4 flex-shrink-0 border border-yellowDark rounded-full mt-1"></span>
+            <p class="ml-4 text-lg">Fusce nec tellus sed augue semper porta. Mauris massa.</p>
+          </li>
+          <li class="flex items-start">
+            <span class="h-4 w-4 flex-shrink-0 border border-yellowDark rounded-full mt-1"></span>
+            <p class="ml-4 text-lg">Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora.</p>
+          </li>
+          <li class="flex items-start">
+            <span class="h-4 w-4 flex-shrink-0 border border-yellowDark rounded-full mt-1"></span>
+            <p class="ml-4 text-lg">Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>
+          </li>
+          <li class="flex items-start">
+            <span class="h-4 w-4 flex-shrink-0 border border-yellowDark rounded-full mt-1"></span>
+            <p class="ml-4 text-lg">Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus.</p>
+          </li>
+          <li class="flex items-start">
+            <span class="h-4 w-4 flex-shrink-0 border border-yellowDark rounded-full mt-1"></span>
+            <p class="ml-4 text-lg">Phasellus viverra nulla ut metus varius laoreet.</p>
+          </li>
+        </ul>
+
+        <a
+          href="#"
+          class="inline-block px-12 py-4 text-lg font-semibold text-white bg-yellowDark rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl mt-6"
+        >
+          Explore Now
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="bg-white text-grayDark">
+
+  <section class="max-w-7xl mx-auto px-6 py-10 border-t border-b border-yellowBorder relative">
+    <div class="flex flex-col md:flex-row items-start gap-8">
+      <!-- Title Section -->
+      <div class="w-full md:w-1/3 text-center md:text-left relative">
+        <h2 class="text-3xl font-bold text-bgColorDark">Lorem Ipsum,<br>Dolor Sit Amet</h2>
+      </div>
+
+      <!-- Yellow Vertical Line (for larger screens) -->
+      <div class="hidden md:block absolute top-0 bottom-0 left-1/3 border-l border-yellowBorder"></div>
+
+      <!-- List Section -->
+      <div class="w-full md:w-2/3">
+        <ul class="list-none space-y-3 text-grayDark">
+          <li class="flex items-start">
+            <span class="h-4 w-4 flex-shrink-0 border border-redWarning rounded-full mt-1"></span>
+            <p class="ml-4 text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li class="flex items-start">
+            <span class="h-4 w-4 flex-shrink-0 border border-redWarning rounded-full mt-1"></span>
+            <p class="ml-4 text-lg">Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+          </li>
+          <li class="flex items-start">
+            <span class="h-4 w-4 flex-shrink-0 border border-redWarning rounded-full mt-1"></span>
+            <p class="ml-4 text-lg">Fusce nec tellus sed augue semper porta. Mauris massa.</p>
+          </li>
+          <li class="flex items-start">
+            <span class="h-4 w-4 flex-shrink-0 border border-redWarning rounded-full mt-1"></span>
+            <p class="ml-4 text-lg">Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora.</p>
+          </li>
+          <li class="flex items-start">
+            <span class="h-4 w-4 flex-shrink-0 border border-redWarning rounded-full mt-1"></span>
+            <p class="ml-4 text-lg">Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>
+          </li>
+          <li class="flex items-start">
+            <span class="h-4 w-4 flex-shrink-0 border border-redWarning rounded-full mt-1"></span>
+            <p class="ml-4 text-lg">Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus.</p>
+          </li>
+          <li class="flex items-start">
+            <span class="h-4 w-4 flex-shrink-0 border border-redWarning rounded-full mt-1"></span>
+            <p class="ml-4 text-lg">Phasellus viverra nulla ut metus varius laoreet.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+
+
+
+
+
+ 
+  
+  <section class="mt-10 px-5">
+    <div class="relative w-full h-96 mt-5 mb-10">
+      <!-- Google Map iframe -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3114204.767224574!2d-85.30982412739567!3d40.33756318471299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8836e97ab54d8ec1%3A0xe5cd64399c9fd916!2sOhio%2C%20USA!5e0!3m2!1sen!2sin!4v1732116620919!5m2!1sen!2sin" 
+              width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+  <!-- Footer Section starts -->
+ 
+<div class="flex flex-col">
+
+  <!-- Footer Section at the End of the Page -->
+  <footer class="bg-bgColorDark text-center py-10">
+    <div class="max-w-screen-xl mx-auto px-4">
+      <!-- Footer Grid Layout -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+
+        <!-- Brand Section with Logo -->
+        <div class="text-center sm:text-left text-white">
+          <!-- Company Logo -->
+          <img src="https://thewaterworks.com/wp-content/uploads/2022/06/ww-low.png" alt="Company Logo" class="w-32 mx-auto sm:mx-0">
+          <p class="mt-2 text-sm text-grayLight">Empowering your business with innovative solutions.</p>
+          <!-- 24/7 Badge -->
+          <div class="mt-4 flex justify-center sm:justify-start">
+            <img src="https://thewaterworks.com/wp-content/uploads/2022/05/247button_orange.png" alt="24/7 Badge" class="w-20 h-20 object-contain">
+          </div>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="text-center sm:text-left text-white">
+          <h4 class="text-lg font-semibold text-yellowLight">Quick Links</h4>
+          <ul class="mt-2 space-y-2">
+            <li><a href="../index.html" class="hover:text-yellowLight">Home</a></li>
+            <li><a href="./pages/services.html" class="hover:text-yellowLight">Services</a></li>
+            <li><a href="./pages/about.html" class="hover:text-yellowLight">About Us</a></li>
+            <li><a href="#" class="hover:text-yellowLight">Contact</a></li>
+            <li><a href="./serviceareas.html" class="hover:text-yellowLight">Careers</a></li>
+            
+          </ul>
+        </div>
+
+        <!-- Contact Us Section -->
+        <div class="text-center sm:text-left text-white">
+          <h4 class="text-lg font-semibold text-yellowLight">Contact Us</h4>
+          <p class="mt-2 text-sm">123 Main Street, Suite 500</p>
+          <p class="mt-2 text-sm">City, State, ZIP</p>
+          <p class="mt-2 text-sm">Email: <a href="mailto:contact@company.com" class="text-yellowLight">contact@company.com</a></p>
+          <p class="mt-2 text-sm">Phone: +1 (123) 456-7890</p>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="text-center sm:text-left text-white">
+          <h5 class="text-lg font-semibold text-yellowLight">Follow Us</h5>
+          <div class="mt-4 flex justify-center sm:justify-start space-x-6">
+            <a href="https://facebook.com" target="_blank" class="text-grayLight hover:text-yellowLight text-3xl">
+              <i class="fab fa-facebook-square"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="text-grayLight hover:text-yellowLight text-3xl">
+              <i class="fab fa-twitter-square"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="text-grayLight hover:text-yellowLight text-3xl">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="text-grayLight hover:text-yellowLight text-3xl">
+              <i class="fab fa-instagram-square"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Section -->
+      <div class="border-t border-grayLight pt-4">
+        <div class="flex justify-center items-center">
+          <p class="text-sm text-white">© 2024 Your Company. All rights reserved.</p>
+          <a href="./pages/privacy.html" class="text-sm text-white mx-2">| Privacy Policy</a>
+          <a href="./pages/terms.html" class="text-sm text-white">| Terms & Conditions</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+</div>
+  <!-- Footer Section ends -->
+  
+
+</body>
+
+</html>
