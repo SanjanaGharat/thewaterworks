@@ -76,14 +76,14 @@
           </button>
           <!-- Dropdown -->
           <div class="absolute left-1/2 -translate-x-1/2 mt-2 hidden group-hover:block bg-white text-black shadow-lg rounded-lg py-2 dropdown-content">
-            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Our Team</a>
+            <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Who are we</a>
             <a href="#" class="block px-4 py-2 hover:bg-bgColorLight">Our Story</a>
           </div>
         </div>
         <span>|</span>
-        <a href="#" class="hover:text-bgBlueHover">Contact</a>
+        <a href="./contact.html" class="hover:text-bgBlueHover">Contact</a>
         <span>|</span>
-        <a href="#" class="hover:text-bgBlueHover">Careers</a>
+        <a href="./careers.html" class="hover:text-bgBlueHover">Careers</a>
       </div>
 
       <!-- Hamburger Icon (Aligned to the Right) -->
@@ -130,15 +130,15 @@
         </svg>
       </button>
       <div id="dropdown-about" class="pl-4 hidden">
-        <a href="#" class="block py-2 hover:text-bgBlueHover">Our Team</a>
+        <a href="#" class="block py-2 hover:text-bgBlueHover">Who are we</a>
         <a href="#" class="block py-2 hover:text-bgBlueHover">Our Story</a>
       </div>
     </div>
 
-    <a href="#" class="mt-4 block py-2 hover:text-bgBlueHover">Contact</a>
+    <a href="./contact.html" class="mt-4 block py-2 hover:text-bgBlueHover">Contact</a>
   
 
-    <a href="#" class="mt-4 block py-2 hover:text-bgBlueHover">Careers</a>
+    <a href="./careers.html" class="mt-4 block py-2 hover:text-bgBlueHover">Careers</a>
   </div>
 </div>
 
@@ -215,7 +215,7 @@
 </section>
 
 <!-- green bg section  -->
-  <section id="greensection" class="w-full bg-gradient-to-r from-greenGradientStart to-greenLight text-white px-6 py-16 text-center rounded-lg animate-gradient">
+  <section id="greensection" class="w-full bg-gradient-to-r from-greenGradientStart to-greenLight text-white px-6 py-16 text-center  animate-gradient">
     <p id="greensection-text" class="text-2xl sm:text-3xl md:text-4xl font-serif">
       With a humble beginning as a small drain cleaning company in 1986, The Waterworks has grown into central Ohio’s leading plumbing, drain, heating, and cooling service provider.
     </p>
@@ -448,6 +448,66 @@
   });
 </script>
 
+<!-- area-served-section -->
+<div class="bg-white text-grayDark">
+
+  <section class="max-w-7xl mx-auto px-6 py-10 border-t border-b border-yellowBorder relative">
+    <div class="flex flex-col md:flex-row items-start gap-8">
+      <!-- Left Section  -->
+      <div class="w-full md:w-1/3 text-center md:text-left relative">
+        <h2 class="text-3xl font-bold text-bgColorDark mb-6">Lorem Ipsum</h2>
+      </div>
+
+      <!-- Vertical Line for Larger Screens -->
+      <div class="hidden md:block absolute top-0 bottom-0 left-1/3 border-l border-yellowBorder"></div>
+
+      <!-- Right Section  -->
+      <div class="w-full md:w-2/3">
+        <div class="space-y-6">
+          <!-- Part 1 -->
+          <div class="flex items-center space-x-4">
+            <img src="https://thewaterworks.com/wp-content/uploads/2022/10/residential-greenblend.png" alt="Icon 1" class="w-10 h-10">
+            <div>
+              <h3 class="text-2xl font-semibold text-bgColorDark mb-2">Residential</h3>
+              <p class="text-lg text-grayDark">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.</p>
+            </div>
+          </div>
+          <hr class="border-t border-grayLight my-6">
+
+          <!-- Part 2 -->
+          <div class="flex items-center space-x-4">
+            <img src="https://thewaterworks.com/wp-content/uploads/2022/11/commercial-orangeblend.png" alt="Icon 2" class="w-10 h-10">
+            <div>
+              <h3 class="text-2xl font-semibold text-bgColorDark mb-2">Commercial</h3>
+              <p class="text-lg text-grayDark">Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
+            </div>
+          </div>
+          <hr class="border-t border-grayLight my-6">
+
+          <!-- Part 3 -->
+          <div class="flex items-center space-x-4">
+            <img src="https://thewaterworks.com/wp-content/uploads/2022/11/industrial-purpleblend.png" alt="Icon 3" class="w-10 h-10">
+            <div>
+              <h3 class="text-2xl font-semibold text-bgColorDark mb-2">Industrial</h3>
+              <p class="text-lg text-grayDark">Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Ut fringilla.</p>
+            </div>
+          </div>
+          <hr class="border-t border-grayLight my-6">
+
+          <!-- Part 4 -->
+          <div class="flex items-center space-x-4">
+            <img src="https://thewaterworks.com/wp-content/uploads/2022/11/municipal_blueblend.png" alt="Icon 4" class="w-10 h-10">
+            <div>
+              <h3 class="text-2xl font-semibold text-bgColorDark mb-2">Municipal</h3>
+              <p class="text-lg text-grayDark">Phasellus viverra nulla ut metus varius laoreet. Fusce nec tellus sed augue semper porta.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
 
 <!-- section with black bg -->
 <section id="plumbing-emergency" class="text-white relative mt-16">
@@ -538,8 +598,170 @@
   }
   </style>
 
+<!-- quote section -->
+<section id="quote-section" class="relative bg-gradient-to-r py-4 px-6 flex justify-center items-center overflow-hidden animate-gradient" style="min-height: 30vh;">
+  <div class="relative text-center text-white max-w-7xl mx-auto">
+    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 text-[1.8rem] text-gray-900 opacity-0 font-extrabold leading-none quote-icon">
+      “
+    </div>
+    <blockquote class="mt-4 text-lg font-bold text-gray-900 opacity-0 leading-tight quote-text">
+      "If I could give Bradley 10 out of 10 stars, I would."
+    </blockquote>
+    <p class="mt-4 text-sm font-medium text-gray-800 opacity-0 quote-paragraph max-w-2xl mx-auto">
+      He was so professional and knowledgeable – got it done so quickly. It’s amazing – someone with real experience and professionalism. I will use The Waterworks again.
+    </p>
+    <p class="mt-4 text-xs font-light text-gray-700 italic opacity-0 quote-author max-w-xl mx-auto">– Kimberly N, Columbus</p>
+    <div class="mt-4 border-t-2 border-gray-800 mx-auto w-8 opacity-0 quote-line"></div>
+  </div>
+</section>
+
+<style>
+   .animate-gradient {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24, #fcd34d);
+  background-size: 400% 400%;
+  animation: gradient-shift 6s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-bounceIn {
+animation: bounce-in 1.2s ease-out forwards; 
+}
 
 
+@keyframes bounce-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.8);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(5px) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-slideInUp {
+  animation: slide-in-up 1.2s ease-out forwards;
+}
+
+@keyframes slide-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInDelay {
+  animation: fade-in 1.8s ease forwards 0.3s;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-scaleIn {
+  animation: scale-in 1.2s ease-out forwards 0.6s;
+}
+
+@keyframes scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 6vh 2vw;
+  }
+  .quote-icon {
+    top: -6px;
+    font-size: 1.6rem;
+  }
+  blockquote {
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 8vh 4vw;
+    min-height: 35vh;
+  }
+  .quote-icon {
+    top: -4px;
+    font-size: 1.4rem;
+  }
+  blockquote {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+}
+
+</style>
+
+
+<!-- three-button-section -->
+<section class="py-16 bg-gray-100">
+  <div class="text-center px-4 max-w-4xl mx-auto">
+    <!-- Text Content -->
+    <p class="text-2xl font-semibold text-gray-800 mb-6">
+      Find out more about The Waterworks’ comprehensive experience in plumbing, drain, heating and cooling services.
+    </p>
+    
+    <!-- Buttons -->
+    <div class="space-y-4 sm:space-y-0 sm:space-x-4 flex flex-col sm:flex-row justify-center items-center">
+      <!-- Schedule Service Button -->
+      <a href="#" class="btn-custom inline-block w-60 px-8 py-2 bg-bgColorDark text-white border-2 border-yellowDark rounded-full text-sm font-semibold hover:bg-bgBlueHover hover:border-bgBlueHover focus:outline-none transition">
+        Schedule Service
+      </a>
+      
+      <!-- Email Question Button -->
+      <a href="mailto:your-email@example.com" class="btn-custom inline-block w-60 px-8 py-2 bg-bgColorDark text-white border-2 border-yellowDark rounded-full text-sm font-semibold hover:bg-bgBlueHover hover:border-bgBlueHover focus:outline-none transition">
+        Email Question
+      </a>
+      
+      <!-- Call Button -->
+      <a href="tel:+3802650858" class="btn-custom inline-block w-60 px-8 py-2 bg-bgColorDark text-white border-2 border-yellowDark rounded-full text-sm font-semibold hover:bg-bgBlueHover hover:border-bgBlueHover focus:outline-none transition">
+        Call (380) 265-0858
+      </a>
+    </div>
+  </div>
+</section>
 
  
   

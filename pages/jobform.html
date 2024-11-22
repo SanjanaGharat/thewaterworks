@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Job Listings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Default table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #f4f4f4;
+            font-weight: bold;
+            color: #333;
+        }
+
+        table td {
+            color: #555;
+        }
+
+        .actions a {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .actions a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 760px) {
+            table {
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Center align the cards */
+                width: 100%;
+                overflow-x: auto;
+                border: none;
+            }
+
+            table th {
+                display: none; /* Hide table headers */
+            }
+
+            table tr {
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Center each card */
+                background-color: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                margin: 15px auto; /* Center each card horizontally */
+                width: 90%; /* Set a fixed width for better alignment */
+                border-radius: 8px;
+            }
+
+            table td {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+                padding: 10px 15px;
+            }
+
+            table td[data-label]:before {
+                content: attr(data-label);
+                font-weight: bold;
+                margin-bottom: 5px;
+                color: #555;
+            }
+
+            .actions a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 flex flex-col items-center">
+
+<section id="job-listings" class="py-16 px-4 sm:px-6 lg:px-8 w-full max-w-5xl">
+    <div class="text-center space-y-12">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-700">Job Opportunities</h2>
+
+        <!-- Search Section -->
+        <div class="flex flex-wrap justify-center gap-6 mb-12">
+            <input
+                id="search-job"
+                type="text"
+                placeholder="Search Jobs"
+                class="px-4 py-2 border border-gray-300 rounded-full w-64 sm:w-80"
+                oninput="filterJobs()"
+            />
+            <select id="department-filter" class="px-4 py-2 border border-gray-300 rounded-full w-64 sm:w-80" onchange="filterJobs()">
+                <option value="">All Departments</option>
+                <option value="plumbing">Plumbing</option>
+                <option value="excavation">Excavation</option>
+                <option value="hvac">HVAC</option>
+            </select>
+            <select id="location-filter" class="px-4 py-2 border border-gray-300 rounded-full w-64 sm:w-80" onchange="filterJobs()">
+                <option value="">All Locations</option>
+                <option value="columbus">Columbus, OH</option>
+                <option value="dayton">Dayton, OH</option>
+            </select>
+        </div>
+
+        <!-- Table for Job Listings -->
+        <div class="overflow-x-auto">
+            <table class="min-w-full">
+                <thead>
+                    <tr>
+                        <th>Job Title</th>
+                        <th>Date Posted</th>
+                        <th>Company</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="job-listings-table">
+                    <!-- Job rows will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<script>
+    const jobs = [
+        { title: "Exterior Plumbing Support", date: "11/19/2024", company: "The Waterworks", link: "/job/exterior-plumbing-support" },
+        { title: "Drain Technician", date: "11/19/2024", company: "The Waterworks", link: "/job/drain-technician" },
+        { title: "Excavation Operator", date: "11/19/2024", company: "Atherton Plumbing - Dayton, OH", link: "/job/excavation-operator" },
+        { title: "Plumbing Technician - Service", date: "11/19/2024", company: "Atherton Plumbing - Dayton, OH", link: "/job/plumbing-technician-service" },
+        { title: "Excavation Operator", date: "11/19/2024", company: "The Waterworks - Columbus", link: "/job/excavation-operator-columbus" },
+        { title: "Plumber - Residential/Commercial", date: "11/19/2024", company: "The Waterworks - Columbus", link: "/job/plumber-residential-commercial" },
+        { title: "Excavation Laborer", date: "11/19/2024", company: "The Waterworks - Columbus, OH", link: "/job/excavation-laborer" },
+        { title: "Plumbing Technician - New Construction", date: "11/19/2024", company: "Atherton Plumbing - Dayton, OH", link: "/job/plumbing-technician-new-construction" }
+    ];
+
+    function renderJobListings() {
+        const container = document.getElementById('job-listings-table');
+        container.innerHTML = ''; // Clear previous jobs
+
+        jobs.forEach(job => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td data-label="Job Title">${job.title}</td>
+                <td data-label="Date Posted">${job.date}</td>
+                <td data-label="Company">${job.company}</td>
+                <td data-label="Actions" class="actions"><a href="${job.link}">View Details</a></td>
+            `;
+            container.appendChild(row);
+        });
+    }
+
+    function filterJobs() {
+        const searchQuery = document.getElementById('search-job').value.toLowerCase();
+        const departmentFilter = document.getElementById('department-filter').value.toLowerCase();
+        const locationFilter = document.getElementById('location-filter').value.toLowerCase();
+
+        const filteredJobs = jobs.filter(job => {
+            const jobTitle = job.title.toLowerCase();
+            const jobCompany = job.company.toLowerCase();
+
+            const isTitleMatch = jobTitle.includes(searchQuery);
+            const isDepartmentMatch = !departmentFilter || jobCompany.includes(departmentFilter);
+            const isLocationMatch = !locationFilter || jobCompany.includes(locationFilter);
+
+            return isTitleMatch && isDepartmentMatch && isLocationMatch;
+        });
+
+        const container = document.getElementById('job-listings-table');
+        container.innerHTML = ''; // Clear existing jobs
+
+        filteredJobs.forEach(job => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td data-label="Job Title">${job.title}</td>
+                <td data-label="Date Posted">${job.date}</td>
+                <td data-label="Company">${job.company}</td>
+                <td data-label="Actions" class="actions"><a href="${job.link}">View Details</a></td>
+            `;
+            container.appendChild(row);
+        });
+    }
+
+    window.onload = renderJobListings;
+</script>
+
+</body>
+</html>

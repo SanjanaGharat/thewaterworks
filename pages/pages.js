@@ -99,3 +99,49 @@ document.addEventListener('DOMContentLoaded', function () {
 
   observer.observe(careersSection);
 });
+
+// quote section
+
+    // Intersection Observer Setup
+    document.addEventListener("DOMContentLoaded", function () {
+      const section = document.getElementById("quote-section");
+    
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const element = entry.target;
+              const quoteIcon = element.querySelector(".quote-icon");
+              const quoteText = element.querySelector(".quote-text");
+              const quoteParagraph = element.querySelector(".quote-paragraph");
+              const quoteAuthor = element.querySelector(".quote-author");
+              const quoteLine = element.querySelector(".quote-line");
+              quoteIcon.classList.add("animate-bounceIn");
+              quoteText.classList.add("animate-slideInUp");
+              quoteParagraph.classList.add("animate-fadeInDelay");
+              quoteAuthor.classList.add("animate-fadeInDelay");
+              quoteLine.classList.add("animate-scaleIn");
+    
+              setTimeout(() => {
+                quoteIcon.style.opacity = "1";
+                quoteText.style.opacity = "1";
+                quoteParagraph.style.opacity = "1";
+                quoteAuthor.style.opacity = "1";
+                quoteLine.style.opacity = "1";
+              }, 1200); 
+    
+              
+              observer.unobserve(element);
+            }
+          });
+        },
+        {
+          root: null,
+          threshold: 0.3, 
+        }
+      );
+    
+      observer.observe(section);
+    });
+    
+    
