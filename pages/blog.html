@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thewaterworks</title>
+    <script src="pages.js" defer></script>
+    <link rel="stylesheet" href="../css/styles.css" >
+    <script src="https://cdn.tailwindcss.com"></script>
+  
+    <link
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        rel="stylesheet"
+    />
+</head>
+<body class="bg-white text-grayDark">
+<!-- Section with Logo, Call Number, and Schedule Now Button -->
+<section class="bg-cover bg-center py-6" style="background-image: url('https://media.istockphoto.com/id/1386705180/photo/abstract-blue-background.jpg?s=612x612&w=0&k=20&c=SyUgZ1hFRCk_WKuULnrSgEcytfo4udnhm4BALJTSEh8=');">
+  <div class="container mx-auto flex flex-wrap justify-between items-center px-4 lg:px-8">
+    <!-- Company Logo -->
+    <div class="w-full lg:w-auto flex justify-center lg:justify-start mb-4 lg:mb-0">
+      <img src="https://thewaterworks.com/wp-content/uploads/2022/06/ww-low.png" alt="Company Logo" class="h-12 max-w-full object-contain">
+    </div>
+
+    <!-- Contact and Schedule Now -->
+    <div class="w-full lg:w-auto flex flex-col lg:flex-row items-center lg:space-x-6 text-center lg:text-left">
+      <!-- Phone Number -->
+      <div class="text-white text-lg mb-4 lg:mb-0">
+        <a href="tel:+1234567890" class="hover:text-black font-medium">+1 (234) 567-890</a>
+      </div>
+      
+
+      <!-- Schedule Now Button -->
+      <a href="contact.html" 
+        class="bg-yellowDark border-2 border-yellowBorder text-white px-6 py-2 rounded-full hover:bg-yellowLight hover:border-yellowLight hover:text-black">
+        Schedule Now
+      </a>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Navbar -->
+  <nav class="bg-bgColorDark  text-white sticky top-0 z-50">
+    <div class="container mx-auto flex items-center justify-between py-4 px-4">
+      <!-- Navbar Links (Center Aligned for Large Screens) -->
+      <div class="hidden lg:flex space-x-8 items-center justify-center w-full text-lg">
+        <a href="../index.html" class="hover:text-bgBlueHover">Home</a>
+        <span>|</span>
+        <a href="service.html" class="hover:text-bgBlueHover">Services</a>
+        <span>|</span>
+        <a href="servicearea.html" class="hover:text-bgBlueHover">Service Areas</a>
+        <span>|</span>
+        <a href="about.html" class="hover:text-bgBlueHover">About</a>
+        <span>|</span>
+        <a href="blog.html" class="hover:text-bgBlueHover">Blog</a>
+        <span>|</span>
+        <a href="contact.html" class="hover:text-bgBlueHover">Contact us</a>
+      </div>
+
+      <!-- Hamburger Icon (Aligned to the Right) -->
+      <button id="menu-toggle" class="lg:hidden ml-auto">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Sidebar (Hidden by Default) -->
+<div id="sidebar-overlay" class="fixed top-0 left-0 w-full h-full bg-black opacity-50 z-40 hidden"></div>
+  <div id="sidebar" class="fixed top-0 left-0 w-64 bg-bgColorDark h-full text-white transform -translate-x-full transition-transform lg:hidden z-50">
+  <button id="sidebar-close" class="absolute top-4 right-4">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+  <div class="mt-20 px-6">
+    <a href="../index.html" class="block py-2 hover:text-bgBlueHover">Home</a>
+    <a href="service.html" class="mt-4 block py-2 hover:text-bgBlueHover">Services</a>
+    <a href="servicearea.html" class="mt-4 block py-2 hover:text-bgBlueHover">Service Areas</a>
+    <a href="about.html" class="mt-4 block py-2 hover:text-bgBlueHover">About</a>
+    <a href="blog.html" class="mt-4 block py-2 hover:text-bgBlueHover">Blog</a>
+    <a href="contact.html" class="mt-4 block py-2 hover:text-bgBlueHover">Contact us</a>
+  </div>
+</div>
+
+
+<!-- 
+Hero section -->
+<section 
+    class="relative bg-cover bg-center h-[50vh] sm:h-[30vh] md:h-[40vh] max-h-[600px]" 
+    style="background-image: url('https://wallpapercave.com/uwp/uwp4560326.jpeg');"
+>
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+
+    <!-- Content -->
+    <div class="relative flex items-center justify-center text-center w-full h-full px-10 md:px-8 sm:px-5 py-10 md:py-20 sm:py-8">
+        <h1 class="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight animate-fade-in">
+          Our Blogs
+        </h1>
+    </div>
+</section>
+
+
+<section class="max-w-5xl mx-auto py-12 px-4">
+    <div id="blog-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Blog cards will be dynamically added here -->
+    </div>
+  
+    <div class="flex justify-center mt-8">
+      <button id="load-more-btn" class="px-6 py-2 text-white rounded-lg bg-bgColorDark hover:bg-greenLight/80">Load More</button>
+    </div>
+</section>
+
+
+  <!-- Footer Section at the End of the Page -->
+  <footer class="bg-bgColorDark text-center py-10">
+    <div class="max-w-screen-xl mx-auto px-4">
+      <!-- Footer Grid Layout -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+
+        <!-- Brand Section with Logo -->
+        <div class="text-center sm:text-left text-white">
+          <!-- Company Logo -->
+          <img src="https://thewaterworks.com/wp-content/uploads/2022/06/ww-low.png" alt="Company Logo" class="w-32 mx-auto sm:mx-0">
+          <p class="mt-2 text-sm text-grayLight">Empowering your business with innovative solutions.</p>
+          <!-- 24/7 Badge -->
+          <div class="mt-4 flex justify-center sm:justify-start">
+            <img src="https://thewaterworks.com/wp-content/uploads/2022/05/247button_orange.png" alt="24/7 Badge" class="w-20 h-20 object-contain">
+          </div>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="text-center sm:text-left text-white">
+          <h4 class="text-lg font-semibold text-yellowLight">Quick Links</h4>
+          <ul class="mt-2 space-y-2">
+            <li><a href="../index.html" class="hover:text-yellowLight">Home</a></li>
+            <li><a href="service.html" class="hover:text-yellowLight">Services</a></li>
+            <li><a href="servicearea.html" class="hover:text-yellowLight">Service areas</a></li>
+            <li><a href="about.html" class="hover:text-yellowLight">About Us</a></li>
+            <li><a href="blog.html" class="hover:text-yellowLight">Blog</a></li>
+            <li><a href="contact.html" class="hover:text-yellowLight">Contact</a></li>
+           
+            
+          </ul>
+        </div>
+
+        <!-- Contact Us Section -->
+        <div class="text-center sm:text-left text-white">
+          <h4 class="text-lg font-semibold text-yellowLight">Contact Us</h4>
+          <p class="mt-2 text-sm">123 Main Street, Suite 500</p>
+          <p class="mt-2 text-sm">City, State, ZIP</p>
+          <p class="mt-2 text-sm">Email: <a href="mailto:contact@company.com" class="text-yellowLight">contact@company.com</a></p>
+          <p class="mt-2 text-sm">Phone: +1 (123) 456-7890</p>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="text-center sm:text-left text-white">
+          <h5 class="text-lg font-semibold text-yellowLight">Follow Us</h5>
+          <div class="mt-4 flex justify-center sm:justify-start space-x-6">
+            <a href="https://facebook.com" target="_blank" class="text-grayLight hover:text-yellowLight text-3xl">
+              <i class="fab fa-facebook-square"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" class="text-grayLight hover:text-yellowLight text-3xl">
+              <i class="fab fa-twitter-square"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="text-grayLight hover:text-yellowLight text-3xl">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="text-grayLight hover:text-yellowLight text-3xl">
+              <i class="fab fa-instagram-square"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Section -->
+      <div class="border-t border-grayLight pt-4">
+        <div class="flex justify-center items-center">
+          <p class="text-sm text-white">© 2024 Your Company. All rights reserved.</p>
+          <a href="privacy.html" class="text-sm text-white mx-2">| Privacy Policy</a>
+          <a href="terms.html" class="text-sm text-white">| Terms & Conditions</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+</div>
+  <!-- Footer Section ends -->
+<script>
+  const blogContainer = document.getElementById('blog-container');
+  const loadMoreBtn = document.getElementById('load-more-btn');
+  
+  const blogData = [
+    { 
+      title: "Lorem ipsum 1", 
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat nisl sed metus sollicitudin.", 
+      image: "https://media.istockphoto.com/id/1157430259/photo/creating-effective-content-on-sticky-notes-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=abmA2J_EbqPPryGgxRAvZClLpPgxIIopR8gzmlQu2hM=", 
+      date: "December 20, 2023",
+      link: "blogcontent.html"
+    },
+    { 
+      title: "Lorem ipsum 2", 
+      description: "Suspendisse potenti. Ut accumsan urna et lorem ullamcorper, in egestas eros eleifend.", 
+      image: "https://media.istockphoto.com/id/1154073003/photo/ready-for-travel.jpg?s=612x612&w=0&k=20&c=Pl7jiUeZ1iMGmJlur8xDu9dQOHJH5ieB0Uegpn5no_0=", 
+      date: "December 21, 2023",
+      link: "blogcontent.html"
+    },
+    { 
+      title: "Lorem ipsum 3", 
+      description: "Vestibulum nec urna ac lacus commodo cursus. Curabitur efficitur sapien ut orci fermentum, at ultricies urna laoreet.", 
+      image: "https://media.istockphoto.com/id/2153699317/photo/an-photographer-equipment-on-colorful-background-side-view-with-copy-space.jpg?s=612x612&w=0&k=20&c=zroxQYkQVrbGGudYVtGFn5Xu5olmpRqSWHnwe_9n9Kw=", 
+      date: "December 22, 2023",
+      link: "blogcontent.html"
+    },
+    { 
+      title: "Lorem ipsum 4", 
+      description: "Sed viverra mauris non sapien tincidunt, in faucibus nisl fermentum. Praesent non ligula in eros ultrices.", 
+      image: "https://media.istockphoto.com/id/1094171214/photo/silhouette-of-a-computer-on-a-table-clear-blue-tropical-water-as-background.jpg?s=612x612&w=0&k=20&c=MyykDjRKWT8reuh4HxU4ZL7IBV_Idm8GAGrj2dyeWj8=", 
+      date: "December 23, 2023" ,
+      link: "blogcontent.html"
+    },
+    { 
+      title: "Blog #5", 
+      description: "Nullam ac justo non metus sodales fermentum sit amet non lorem. Integer vel velit volutpat, sagittis neque at, posuere.", 
+      image: "https://media.istockphoto.com/id/1424001698/photo/social-media-chat-icon-pastel-soft.jpg?s=612x612&w=0&k=20&c=p82WvZdAEM1eJXmrlpeZX2yqQDxZ-4b_tJSp39f98xU=", 
+      date: "December 24, 2023" ,
+      link: "../pages/post1.html"
+    },
+    { 
+      title: "Blog #6", 
+      description: "Proin id augue a lorem mollis sollicitudin. Nulla aliquam risus sit amet dui suscipit, vel dapibus lorem tristique.", 
+      image: "https://media.istockphoto.com/id/1146554418/photo/retro-blog-bookshelf-with-cozy-interior.jpg?s=612x612&w=0&k=20&c=oh0qhFKxWX8e3SnuUGZSvK4dg9SeIkOSf47hgudOVpY=", 
+      date: "December 25, 2023" ,
+      link: "../pages/post1.html"
+    },
+    { 
+      title: "Blog #7", 
+      description: "Mauris auctor nisi ut erat convallis, sed convallis magna vehicula. Suspendisse vel ante eget felis gravida tincidunt.", 
+      image: "https://media.istockphoto.com/id/1312418309/photo/visual-contents-concept-social-networking-service-streaming-video-communication-network-3d.jpg?s=612x612&w=0&k=20&c=2wop2q3V2_nHCc4X7ISInzRA3Bp52UHAX0tTgKNWeBQ=", 
+      date: "December 26, 2023",
+      link: "../pages/post1.html" 
+    },
+    { 
+      title: "Blog #8", 
+      description: "Etiam consectetur magna in justo malesuada, id vestibulum turpis varius. Nam feugiat massa ac diam gravida.", 
+      image: "https://media.istockphoto.com/id/1776879677/photo/close-up-young-man-hand-hold-smartphone-and-use-application-of-e-commerce-to-working-about.jpg?s=612x612&w=0&k=20&c=EMgXZ6cXxDFHYWtlEbZMRFo7qft1TZRfJDANYEwTmXg=", 
+      date: "December 27, 2023",
+      link: "../pages/post1.html" 
+    },
+    { 
+      title: "Blog #9", 
+      description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.", 
+      image: "https://media.istockphoto.com/id/517899146/photo/chat-symbol-and-quotation-mark.jpg?s=612x612&w=0&k=20&c=pobhizbEsZs273ZvHLxDRgCP_CT0oxItTvQ27ndKvlw=", 
+      date: "December 28, 2023" ,
+      link: "../pages/post1.html"
+    },
+    { 
+      title: "Blog #10", 
+      description: "Sed ultrices, ligula non egestas faucibus, felis ipsum efficitur nisi, vitae convallis libero turpis eu nibh.", 
+      image: "https://media.istockphoto.com/id/1185009965/photo/social-networking-service-concept-influencer-marketing.jpg?s=612x612&w=0&k=20&c=9Ya-z9zPaRzHO_itnZycfEuisFX49ukABXOnaKJz9Vg=", 
+      date: "December 29, 2023",
+      link: "../pages/post1.html" 
+    },
+    { 
+      title: "Blog #11", 
+      description: "Curabitur sit amet ante ut ipsum pharetra varius at non ligula. Cras a mauris vel sem vehicula pellentesque.", 
+      image: "https://media.istockphoto.com/id/1300164549/photo/get-organised-get-it-done.jpg?s=612x612&w=0&k=20&c=r1zdN48ovoOqDlPm_2X5RLj1hoTxD8r2Z-QCI1MCDnI=", 
+      date: "December 30, 2023",
+      link: "../pages/post1.html" 
+    },
+    { 
+      title: "Blog #12", 
+      description: "Vivamus tincidunt, leo vel tincidunt pharetra, enim magna ullamcorper leo, sed vulputate felis lacus et mauris.", 
+      image: "https://media.istockphoto.com/id/480187760/photo/female-novelist-writing-on-the-laptop.jpg?s=612x612&w=0&k=20&c=xcmnzlkoTIE00DX8MvuRZPAKCNV8-gxBBVcZNJRq_uU=", 
+      date: "December 31, 2023" ,
+      link: "../pages/post1.html"
+    }
+  ];
+  
+  let cardCount = 0;
+  
+  function loadCards() {
+    const cardsToLoad = 4; 
+    for (let i = 0; i < cardsToLoad && cardCount < blogData.length; i++) {
+      const blog = blogData[cardCount];
+      const card = document.createElement('div');
+      card.className = 'bg-white rounded-lg shadow-lg overflow-hidden h-[500px] max-w-md w-full mx-auto card';
+  
+      card.innerHTML = `
+        <img src="${blog.image}" alt="Image for ${blog.title}" class="w-full h-60 object-cover">
+        <div class="p-6">
+          <h3 class="text-lg font-semibold mb-2 text-bgColorDark">${blog.title}</h3>
+          <p class="text-grayDark mb-4 text-justify">${blog.description}</p>
+          <a href="${blog.link}" class="text-bgColorDark font-semibold hover:text-greenLight/80" target="_blank" rel="noopener noreferrer">Read more &rarr;</a>
+          <p class="text-grayLight text-sm mt-2">${blog.date}</p>
+        </div>
+      `;
+  
+      blogContainer.appendChild(card);
+      cardCount++;
+    }
+  
+    if (cardCount >= blogData.length) {
+      loadMoreBtn.style.display = 'none';
+    }
+  }
+  
+  loadCards();
+  loadMoreBtn.addEventListener('click', loadCards);
+</script>
+
+<style>
+  .card {
+    transition: transform 0.3s ease;
+  }
+</style>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="../script/script.js"></script>
+</body>
+</html>

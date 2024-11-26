@@ -16,9 +16,9 @@
   }
 
   @media (max-width: 480px) {
-    .relative {
+    /* .relative {
       padding-top: 50px;
-    }
+    } */
 
     #typing-text,
     #second-line {
