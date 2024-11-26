@@ -100,149 +100,72 @@ Hero section -->
     <!-- Content -->
     <div class="relative flex items-center justify-center text-center w-full h-full px-10 md:px-8 sm:px-5 py-10 md:py-20 sm:py-8">
         <h1 class="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight animate-fade-in">
-          Our Blog
+         Our Terms and Conditions
         </h1>
     </div>
 </section>
 
-<section class="max-w-5xl mx-auto py-12 px-4">
-  <div id="blog-section-container" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    <!-- Blog cards will be dynamically added here -->
-  </div>
+<section class="terms-conditions py-12 px-4 bg-gray-100">
+    <div class="max-w-screen-xl mx-auto px-4">
+        
+        <h3 class="text-2xl font-semibold mb-4">Terms and Conditions</h3>
+        <p class="text-lg text-gray-600 mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at purus id lacus malesuada volutpat. Etiam vel magna sit amet felis ultrices aliquet ac id lectus.
+        </p>
 
-  <div class="flex justify-center mt-8">
-    <button id="load-more-blogs-btn" class="px-6 py-2 text-white rounded-lg bg-bgColorDark hover:bg-greenLight/80">Load More</button>
-  </div>
-</section>
-<style>
-  .blog-card {
-    transition: transform 0.3s ease;
-  }
-</style>
+        <h3 class="text-2xl font-semibold  mb-4">OUR RESPONSIBILITY</h3>
+        <p class="text-lg text-gray-600 mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac felis sit amet justo aliquet volutpat. Aliquam erat volutpat. Quisque sit amet lectus a orci dictum ullamcorper.
+        </p>
 
-<script>
-  const blogSectionContainer = document.getElementById('blog-section-container');
-  const loadMoreBlogsBtn = document.getElementById('load-more-blogs-btn');
+        <h3 class="text-2xl font-semibold  mb-4">LIMITED LIABILITY</h3>
+        <p class="text-lg text-gray-600 mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+        </p>
 
-  const blogSectionData = [
-  { 
-      title: "Lorem ipsum 1", 
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consequat nisl sed metus sollicitudin.", 
-      image: "https://media.istockphoto.com/id/1157430259/photo/creating-effective-content-on-sticky-notes-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=abmA2J_EbqPPryGgxRAvZClLpPgxIIopR8gzmlQu2hM=", 
-      date: "December 20, 2023",
-      link: "blogcontent.html"
-    },
-    { 
-      title: "Lorem ipsum 2", 
-      description: "Suspendisse potenti. Ut accumsan urna et lorem ullamcorper, in egestas eros eleifend.", 
-      image: "https://media.istockphoto.com/id/1154073003/photo/ready-for-travel.jpg?s=612x612&w=0&k=20&c=Pl7jiUeZ1iMGmJlur8xDu9dQOHJH5ieB0Uegpn5no_0=", 
-      date: "December 21, 2023",
-      link: "blogcontent.html"
-    },
-    { 
-      title: "Lorem ipsum 3", 
-      description: "Vestibulum nec urna ac lacus commodo cursus. Curabitur efficitur sapien ut orci fermentum, at ultricies urna laoreet.", 
-      image: "https://media.istockphoto.com/id/2153699317/photo/an-photographer-equipment-on-colorful-background-side-view-with-copy-space.jpg?s=612x612&w=0&k=20&c=zroxQYkQVrbGGudYVtGFn5Xu5olmpRqSWHnwe_9n9Kw=", 
-      date: "December 22, 2023",
-      link: "blogcontent.html"
-    },
-    { 
-      title: "Lorem ipsum 4", 
-      description: "Sed viverra mauris non sapien tincidunt, in faucibus nisl fermentum. Praesent non ligula in eros ultrices.", 
-      image: "https://media.istockphoto.com/id/1094171214/photo/silhouette-of-a-computer-on-a-table-clear-blue-tropical-water-as-background.jpg?s=612x612&w=0&k=20&c=MyykDjRKWT8reuh4HxU4ZL7IBV_Idm8GAGrj2dyeWj8=", 
-      date: "December 23, 2023" ,
-      link: "blogcontent.html"
-    },
-    { 
-      title: "Blog #5", 
-      description: "Nullam ac justo non metus sodales fermentum sit amet non lorem. Integer vel velit volutpat, sagittis neque at, posuere.", 
-      image: "https://media.istockphoto.com/id/1424001698/photo/social-media-chat-icon-pastel-soft.jpg?s=612x612&w=0&k=20&c=p82WvZdAEM1eJXmrlpeZX2yqQDxZ-4b_tJSp39f98xU=", 
-      date: "December 24, 2023" ,
-      link: "../pages/post1.html"
-    },
-    { 
-      title: "Blog #6", 
-      description: "Proin id augue a lorem mollis sollicitudin. Nulla aliquam risus sit amet dui suscipit, vel dapibus lorem tristique.", 
-      image: "https://media.istockphoto.com/id/1146554418/photo/retro-blog-bookshelf-with-cozy-interior.jpg?s=612x612&w=0&k=20&c=oh0qhFKxWX8e3SnuUGZSvK4dg9SeIkOSf47hgudOVpY=", 
-      date: "December 25, 2023" ,
-      link: "../pages/post1.html"
-    },
-    { 
-      title: "Blog #7", 
-      description: "Mauris auctor nisi ut erat convallis, sed convallis magna vehicula. Suspendisse vel ante eget felis gravida tincidunt.", 
-      image: "https://media.istockphoto.com/id/1312418309/photo/visual-contents-concept-social-networking-service-streaming-video-communication-network-3d.jpg?s=612x612&w=0&k=20&c=2wop2q3V2_nHCc4X7ISInzRA3Bp52UHAX0tTgKNWeBQ=", 
-      date: "December 26, 2023",
-      link: "../pages/post1.html" 
-    },
-    { 
-      title: "Blog #8", 
-      description: "Etiam consectetur magna in justo malesuada, id vestibulum turpis varius. Nam feugiat massa ac diam gravida.", 
-      image: "https://media.istockphoto.com/id/1776879677/photo/close-up-young-man-hand-hold-smartphone-and-use-application-of-e-commerce-to-working-about.jpg?s=612x612&w=0&k=20&c=EMgXZ6cXxDFHYWtlEbZMRFo7qft1TZRfJDANYEwTmXg=", 
-      date: "December 27, 2023",
-      link: "../pages/post1.html" 
-    },
-    { 
-      title: "Blog #9", 
-      description: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.", 
-      image: "https://media.istockphoto.com/id/517899146/photo/chat-symbol-and-quotation-mark.jpg?s=612x612&w=0&k=20&c=pobhizbEsZs273ZvHLxDRgCP_CT0oxItTvQ27ndKvlw=", 
-      date: "December 28, 2023" ,
-      link: "../pages/post1.html"
-    },
-    { 
-      title: "Blog #10", 
-      description: "Sed ultrices, ligula non egestas faucibus, felis ipsum efficitur nisi, vitae convallis libero turpis eu nibh.", 
-      image: "https://media.istockphoto.com/id/1185009965/photo/social-networking-service-concept-influencer-marketing.jpg?s=612x612&w=0&k=20&c=9Ya-z9zPaRzHO_itnZycfEuisFX49ukABXOnaKJz9Vg=", 
-      date: "December 29, 2023",
-      link: "../pages/post1.html" 
-    },
-    { 
-      title: "Blog #11", 
-      description: "Curabitur sit amet ante ut ipsum pharetra varius at non ligula. Cras a mauris vel sem vehicula pellentesque.", 
-      image: "https://media.istockphoto.com/id/1300164549/photo/get-organised-get-it-done.jpg?s=612x612&w=0&k=20&c=r1zdN48ovoOqDlPm_2X5RLj1hoTxD8r2Z-QCI1MCDnI=", 
-      date: "December 30, 2023",
-      link: "../pages/post1.html" 
-    },
-    { 
-      title: "Blog #12", 
-      description: "Vivamus tincidunt, leo vel tincidunt pharetra, enim magna ullamcorper leo, sed vulputate felis lacus et mauris.", 
-      image: "https://media.istockphoto.com/id/480187760/photo/female-novelist-writing-on-the-laptop.jpg?s=612x612&w=0&k=20&c=xcmnzlkoTIE00DX8MvuRZPAKCNV8-gxBBVcZNJRq_uU=", 
-      date: "December 31, 2023" ,
-      link: "../pages/post1.html"
-    }
-  ];
+        <h3 class="text-2xl font-semibold  mb-4">OUR PRICING</h3>
+        <p class="text-lg text-gray-600 mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at purus id lacus malesuada volutpat. Etiam vel magna sit amet felis ultrices aliquet ac id lectus. Fusce ac felis sit amet justo aliquet volutpat.
+        </p>
 
+        <h3 class="text-2xl font-semibold mb-4">YOUR RESPONSIBILITY</h3>
+        <p class="text-lg text-gray-600 mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
 
-  let blogCardCount = 0;
+        <h3 class="text-2xl font-semibold  mb-4">PAYMENT TERMS AND FEES</h3>
+        <p class="text-lg text-gray-600 mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod justo eu nisl suscipit, sed auctor dui interdum. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+        </p>
 
-  function loadBlogCards() {
-    const cardsToLoad = 4; 
-    for (let i = 0; i < cardsToLoad && blogCardCount < blogSectionData.length; i++) {
-      const blog = blogSectionData[blogCardCount];
-      const card = document.createElement('div');
-      card.className = 'bg-white rounded-lg shadow-lg overflow-hidden h-[500px] max-w-md w-full mx-auto blog-card';
+        <h3 class="text-2xl font-semibold  mb-4">LEGAL ACTION</h3>
+        <p class="text-lg text-gray-600 mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac felis sit amet justo aliquet volutpat. Quisque sit amet lectus a orci dictum ullamcorper. Nulla facilisi. Integer nec odio. Sed nisi.
+        </p>
 
-      card.innerHTML = `
-        <img src="${blog.image}" alt="Image for ${blog.title}" class="w-full h-60 object-cover">
-        <div class="p-6">
-          <h3 class="text-lg font-semibold mb-2 text-bgColorDark">${blog.title}</h3>
-          <p class="text-grayDark mb-4 text-justify">${blog.description}</p>
-          <a href="${blog.link}" class="text-bgColorDark font-semibold hover:text-greenLight/80" target="_self" rel="noopener noreferrer">Read more &rarr;</a>
-          <p class="text-grayLight text-sm mt-2">${blog.date}</p>
+        <h3 class="text-2xl font-semibold mb-4">This Agreement</h3>
+        <p class="text-lg text-gray-600 mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod justo eu nisl suscipit, sed auctor dui interdum. Quisque sit amet lectus a orci dictum ullamcorper. Nulla facilisi.
+        </p>
+
+        <h3 class="text-2xl font-semibold  mb-4">FORCE MAJEURE</h3>
+        <p class="text-lg text-gray-600 mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at purus id lacus malesuada volutpat. Fusce ac felis sit amet justo aliquet volutpat. Integer nec odio. Sed cursus ante dapibus diam.
+        </p>
+
+        <h3 class="text-2xl font-semibold  mb-4">Disclaimer</h3>
+        <p class="text-lg text-gray-600 mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac felis sit amet justo aliquet volutpat. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+
+        <div class="mt-12">
+            <h4 class="text-xl font-semibold  mb-4">Google Reviews</h4>
+            <p class="text-lg text-gray-600 mb-6">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
         </div>
-      `;
-
-      blogSectionContainer.appendChild(card);
-      blogCardCount++;
-    }
-
-    if (blogCardCount >= blogSectionData.length) {
-      loadMoreBlogsBtn.style.display = 'none';
-    }
-  }
-
-  loadBlogCards();
-  loadMoreBlogsBtn.addEventListener('click', loadBlogCards);
-</script>
+    </div>
+</section>
 
 
 
