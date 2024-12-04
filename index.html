@@ -49,9 +49,25 @@
       <div class="hidden lg:flex space-x-8 items-center justify-center w-full text-lg">
         <a href="#" class="hover:text-bgBlueHover">Home</a>
         <span>|</span>
-        <a href="./pages/service.html" class="hover:text-bgBlueHover">Services</a>
+        <div class="relative group">
+          <button class="hover:text-bgBlueHover flex items-center space-x-2">
+            <a href="/pages/service.html">
+              <span>Services</span>
+            </a>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          <!-- Dropdown -->
+          <div class="absolute left-1/2 -translate-x-1/2 mt-2 hidden group-hover:block bg-white text-black shadow-lg rounded-lg py-2 dropdown-content">
+            <a href="/pages/plumbing.html" class="block px-4 py-2 hover:bg-bgColorLight">Plumbing</a>
+            <a href="/pages/drain.html" class="block px-4 py-2 hover:bg-bgColorLight">Drain</a>
+            <a href="/pages/heating.html" class="block px-4 py-2 hover:bg-bgColorLight">Heating&Cooling</a>
+          </div>
+        </div>
         <span>|</span>
-        <a href="./pages/servicearea.html" class="hover:text-bgBlueHover">Service Areas</a>
+        <a href="./pages/servicearea.html" class="hover:text-bgBlueHover">Area Served</a>
         <span>|</span>
         <a href="./pages/about.html" class="hover:text-bgBlueHover">About</a>
         <span>|</span>
@@ -79,8 +95,23 @@
   </button>
   <div class="mt-20 px-6">
     <a href="#" class="block py-2 hover:text-bgBlueHover">Home</a>
-    <a href="./pages/service.html" class="mt-4 block py-2 hover:text-bgBlueHover">Services</a>
-    <a href="./pages/servicearea.html" class="mt-4 block py-2 hover:text-bgBlueHover">Service Areas</a>
+    <div class="mt-4">
+      <button class="flex items-center justify-between w-full py-2 hover:text-bgBlueHover" data-dropdown="services">
+        <a href="/pages/service.html" class="text-left">
+          <span>Services</span>
+        </a>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div id="dropdown-services" class="pl-4 hidden">
+        <a href="/pages/plumbing.html" class="block py-2 hover:text-bgBlueHover">Plumbing</a>
+        <a href="/pages/drain.html" class="block py-2 hover:text-bgBlueHover">Drain</a>
+        <a href="/pages/heating.html" class="block py-2 hover:text-bgBlueHover">Heating&Cooling</a>
+      </div>
+    </div>
+    
+    <a href="./pages/servicearea.html" class="mt-4 block py-2 hover:text-bgBlueHover">Area Served</a>
     <a href="./pages/about.html" class="mt-4 block py-2 hover:text-bgBlueHover">About</a>
     <a href="./pages/blog.html" class="mt-4 block py-2 hover:text-bgBlueHover">Blog</a>
     <a href="./pages/contact.html" class="mt-4 block py-2 hover:text-bgBlueHover">Contact us</a>
@@ -108,7 +139,7 @@
     <!-- Service Icons Section -->
     <div class="flex flex-col md:flex-row justify-center gap-8 mb-12">
       <!-- Plumbing -->
-      <a href="/plumbing" class="group flex flex-col items-center transition-transform transform hover:scale-110">
+      <a href="./pages/plumbing" class="group flex flex-col items-center transition-transform transform hover:scale-110">
         <div class="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center transition-all group-hover:rotate-[360deg] group-hover:duration-500 rotate-360">
           <img src="https://thewaterworks.com/wp-content/uploads/2022/06/plumbing-slider-icon2.png" alt="Plumbing" class="w-20 h-20 md:w-24 md:h-24">
         </div>
@@ -116,7 +147,7 @@
       </a>
 
       <!-- Drain -->
-      <a href="/drain" class="group flex flex-col items-center transition-transform transform hover:scale-110">
+      <a href="/pages/drain.html" class="group flex flex-col items-center transition-transform transform hover:scale-110">
         <div class="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center transition-all group-hover:rotate-[360deg] group-hover:duration-500 rotate-360">
           <img src="https://thewaterworks.com/wp-content/uploads/2022/06/drain-slider-icon.png" alt="Drain" class="w-20 h-20 md:w-24 md:h-24">
         </div>
@@ -124,7 +155,7 @@
       </a>
 
       <!-- Heating & Cooling -->
-      <a href="/heating-cooling" class="group flex flex-col items-center transition-transform transform hover:scale-110">
+      <a href="./pages/heating-cooling" class="group flex flex-col items-center transition-transform transform hover:scale-110">
         <div class="w-32 h-32 md:w-40 md:h-40 rounded-full flex items-center justify-center transition-all group-hover:rotate-[360deg] group-hover:duration-500 rotate-360">
           <img src="https://thewaterworks.com/wp-content/uploads/2022/06/heating-slider-icon.png" alt="Heating & Cooling" class="w-20 h-20 md:w-24 md:h-24">
         </div>
@@ -336,142 +367,6 @@
 </section>
 
 
-<!-- quote section -->
-<section id="quote-section" class="relative bg-gradient-to-r py-4 px-6 flex justify-center items-center overflow-hidden animate-gradient" style="min-height: 30vh;">
-    <div class="relative text-center text-white max-w-7xl mx-auto">
-      <div class="absolute top-0 left-1/2 transform -translate-x-1/2 text-[1.8rem] text-gray-900 opacity-0 font-extrabold leading-none quote-icon">
-        “
-      </div>
-      <blockquote class="mt-4 text-lg font-bold text-gray-900 opacity-0 leading-tight quote-text">
-        "If I could give Bradley 10 out of 10 stars, I would."
-      </blockquote>
-      <p class="mt-4 text-sm font-medium text-gray-800 opacity-0 quote-paragraph max-w-2xl mx-auto">
-        He was so professional and knowledgeable – got it done so quickly. It’s amazing – someone with real experience and professionalism. I will use The Waterworks again.
-      </p>
-      <p class="mt-4 text-xs font-light text-gray-700 italic opacity-0 quote-author max-w-xl mx-auto">– Kimberly N, Columbus</p>
-      <div class="mt-4 border-t-2 border-gray-800 mx-auto w-8 opacity-0 quote-line"></div>
-    </div>
-  </section>
- 
-  <style>
-     .animate-gradient {
-    background: linear-gradient(90deg, #f59e0b, #fbbf24, #fcd34d);
-    background-size: 400% 400%;
-    animation: gradient-shift 6s ease infinite;
-  }
-
-  @keyframes gradient-shift {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  .animate-bounceIn {
-  animation: bounce-in 1.2s ease-out forwards; 
-}
-
-
-  @keyframes bounce-in {
-    0% {
-      opacity: 0;
-      transform: translateY(-10px) scale(0.8);
-    }
-    60% {
-      opacity: 1;
-      transform: translateY(5px) scale(1.1);
-    }
-    100% {
-      transform: translateY(0) scale(1);
-    }
-  }
-
-  .animate-slideInUp {
-    animation: slide-in-up 1.2s ease-out forwards;
-  }
-
-  @keyframes slide-in-up {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fadeInDelay {
-    animation: fade-in 1.8s ease forwards 0.3s;
-  }
-
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-scaleIn {
-    animation: scale-in 1.2s ease-out forwards 0.6s;
-  }
-
-  @keyframes scale-in {
-    0% {
-      opacity: 0;
-      transform: scale(0.5);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  @media (max-width: 768px) {
-    section {
-      padding: 6vh 2vw;
-    }
-    .quote-icon {
-      top: -6px;
-      font-size: 1.6rem;
-    }
-    blockquote {
-      font-size: 1.4rem;
-    }
-    p {
-      font-size: 0.85rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    section {
-      padding: 8vh 4vw;
-      min-height: 35vh;
-    }
-    .quote-icon {
-      top: -4px;
-      font-size: 1.4rem;
-    }
-    blockquote {
-      font-size: 1.2rem;
-    }
-    p {
-      font-size: 0.75rem;
-      line-height: 1.4;
-    }
-  }
-
-  </style>
-  
 <!-- ohiomapimage section -->
 
   <section class="bg-white text-grayDark py-16 px-8">
@@ -533,10 +428,11 @@
           <ul class="mt-2 space-y-2">
             <li><a href="../index.html" class="hover:text-yellowLight">Home</a></li>
             <li><a href="./pages/service.html" class="hover:text-yellowLight">Services</a></li>
-            <li><a href="./pages/servicearea.html" class="hover:text-yellowLight">Service areas</a></li>
+            <li><a href="./pages/servicearea.html" class="hover:text-yellowLight">Area Served</a></li>
             <li><a href="./pages/about.html" class="hover:text-yellowLight">About Us</a></li>
             <li><a href="./pages/blog.html" class="hover:text-yellowLight">Blog</a></li>
             <li><a href="./pages/contact.html" class="hover:text-yellowLight">Contact</a></li>
+            <li><a href="sitemap.html" class="hover:text-yellowLight">Sitemap</a></li>
            
             
           </ul>

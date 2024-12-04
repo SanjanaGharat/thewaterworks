@@ -5,19 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <title>thewaterworks</title>
-  <link rel="stylesheet" href="../css/styles.css" >
+  <link rel="stylesheet" href="./css/styles.css" >
   <script src="https://cdn.tailwindcss.com"></script>
- 
-  <script src="pages.js" defer></script>
+  <script src="./pages/pages.js" defer></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
 
 </head>
 
 <body class="font-sans bg-gray-50">
-
 <!-- Section with Logo, Call Number, and Schedule Now Button -->
 <section class="bg-cover bg-center py-6" style="background-image: url('https://media.istockphoto.com/id/1386705180/photo/abstract-blue-background.jpg?s=612x612&w=0&k=20&c=SyUgZ1hFRCk_WKuULnrSgEcytfo4udnhm4BALJTSEh8=');">
   <div class="container mx-auto flex flex-wrap justify-between items-center px-4 lg:px-8">
@@ -35,7 +32,7 @@
       
 
       <!-- Schedule Now Button -->
-      <a href="contact.html" 
+      <a href="./pages/contact.html" 
         class="bg-yellowDark border-2 border-yellowBorder text-white px-6 py-2 rounded-full hover:bg-yellowLight hover:border-yellowLight hover:text-black">
         Schedule Now
       </a>
@@ -49,11 +46,11 @@
     <div class="container mx-auto flex items-center justify-between py-4 px-4">
       <!-- Navbar Links (Center Aligned for Large Screens) -->
       <div class="hidden lg:flex space-x-8 items-center justify-center w-full text-lg">
-        <a href="../index.html" class="hover:text-bgBlueHover">Home</a>
+        <a href="#" class="hover:text-bgBlueHover">Home</a>
         <span>|</span>
         <div class="relative group">
           <button class="hover:text-bgBlueHover flex items-center space-x-2">
-            <a href="service.html">
+            <a href="/pages/service.html">
               <span>Services</span>
             </a>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -63,19 +60,19 @@
           
           <!-- Dropdown -->
           <div class="absolute left-1/2 -translate-x-1/2 mt-2 hidden group-hover:block bg-white text-black shadow-lg rounded-lg py-2 dropdown-content">
-            <a href="plumbing.html" class="block px-4 py-2 hover:bg-bgColorLight">Plumbing</a>
-            <a href="drain.html" class="block px-4 py-2 hover:bg-bgColorLight">Drain</a>
-            <a href="heating.html" class="block px-4 py-2 hover:bg-bgColorLight">Heating&Cooling</a>
+            <a href="/pages/plumbing.html" class="block px-4 py-2 hover:bg-bgColorLight">Plumbing</a>
+            <a href="/pages/drain.html" class="block px-4 py-2 hover:bg-bgColorLight">Drain</a>
+            <a href="/pages/heating.html" class="block px-4 py-2 hover:bg-bgColorLight">Heating&Cooling</a>
           </div>
         </div>
         <span>|</span>
-        <a href="servicearea.html" class="hover:text-bgBlueHover">Area Served</a>
+        <a href="./pages/servicearea.html" class="hover:text-bgBlueHover">Area Served</a>
         <span>|</span>
-        <a href="about.html" class="hover:text-bgBlueHover">About</a>
+        <a href="./pages/about.html" class="hover:text-bgBlueHover">About</a>
         <span>|</span>
-        <a href="blog.html" class="hover:text-bgBlueHover">Blog</a>
+        <a href="./pages/blog.html" class="hover:text-bgBlueHover">Blog</a>
         <span>|</span>
-        <a href="contact.html" class="hover:text-bgBlueHover">Contact us</a>
+        <a href="./pages/contact.html" class="hover:text-bgBlueHover">Contact us</a>
       </div>
 
       <!-- Hamburger Icon (Aligned to the Right) -->
@@ -96,10 +93,10 @@
     </svg>
   </button>
   <div class="mt-20 px-6">
-    <a href="../index.html" class="block py-2 hover:text-bgBlueHover">Home</a>
+    <a href="#" class="block py-2 hover:text-bgBlueHover">Home</a>
     <div class="mt-4">
       <button class="flex items-center justify-between w-full py-2 hover:text-bgBlueHover" data-dropdown="services">
-        <a href="service.html" class="text-left">
+        <a href="/pages/service.html" class="text-left">
           <span>Services</span>
         </a>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -107,101 +104,82 @@
         </svg>
       </button>
       <div id="dropdown-services" class="pl-4 hidden">
-        <a href="plumbing.html" class="block py-2 hover:text-bgBlueHover">Plumbing</a>
-        <a href="drain.html" class="block py-2 hover:text-bgBlueHover">Drain</a>
-        <a href="heating.html" class="block py-2 hover:text-bgBlueHover">Heating&Cooling</a>
+        <a href="/pages/plumbing.html" class="block py-2 hover:text-bgBlueHover">Plumbing</a>
+        <a href="/pages/drain.html" class="block py-2 hover:text-bgBlueHover">Drain</a>
+        <a href="/pages/heating.html" class="block py-2 hover:text-bgBlueHover">Heating&Cooling</a>
       </div>
     </div>
-        <a href="servicearea.html" class="mt-4 block py-2 hover:text-bgBlueHover">Area Served</a>
-    <a href="about.html" class="mt-4 block py-2 hover:text-bgBlueHover">About</a>
-    <a href="blog.html" class="mt-4 block py-2 hover:text-bgBlueHover">Blog</a>
-    <a href="contact.html" class="mt-4 block py-2 hover:text-bgBlueHover">Contact us</a>
+    
+    <a href="./pages/servicearea.html" class="mt-4 block py-2 hover:text-bgBlueHover">Area Served</a>
+    <a href="./pages/about.html" class="mt-4 block py-2 hover:text-bgBlueHover">About</a>
+    <a href="./pages/blog.html" class="mt-4 block py-2 hover:text-bgBlueHover">Blog</a>
+    <a href="./pages/contact.html" class="mt-4 block py-2 hover:text-bgBlueHover">Contact us</a>
   </div>
 </div>
-<!-- 
-Hero section -->
-<section 
-    class="relative bg-cover bg-center h-[50vh] sm:h-[30vh] md:h-[40vh] max-h-[600px]" 
-    style="background-image: url('https://wallpapercave.com/uwp/uwp4560326.jpeg');"
->
-    <!-- Overlay -->
-    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-
-    <!-- Content -->
-    <div class="relative flex items-center justify-center text-center w-full h-full px-10 md:px-8 sm:px-5 py-10 md:py-20 sm:py-8">
-        <h1 class="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight animate-fade-in">
-         Our Terms and Conditions
-        </h1>
-    </div>
-</section>
-
-<section class="terms-conditions py-12 px-4 bg-gray-100">
-    <div class="max-w-screen-xl mx-auto px-4">
-        
-        <h3 class="text-2xl font-semibold mb-4">Terms and Conditions</h3>
-        <p class="text-lg text-gray-600 mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at purus id lacus malesuada volutpat. Etiam vel magna sit amet felis ultrices aliquet ac id lectus.
-        </p>
-
-        <h3 class="text-2xl font-semibold  mb-4">OUR RESPONSIBILITY</h3>
-        <p class="text-lg text-gray-600 mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac felis sit amet justo aliquet volutpat. Aliquam erat volutpat. Quisque sit amet lectus a orci dictum ullamcorper.
-        </p>
-
-        <h3 class="text-2xl font-semibold  mb-4">LIMITED LIABILITY</h3>
-        <p class="text-lg text-gray-600 mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
-        </p>
-
-        <h3 class="text-2xl font-semibold  mb-4">OUR PRICING</h3>
-        <p class="text-lg text-gray-600 mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at purus id lacus malesuada volutpat. Etiam vel magna sit amet felis ultrices aliquet ac id lectus. Fusce ac felis sit amet justo aliquet volutpat.
-        </p>
-
-        <h3 class="text-2xl font-semibold mb-4">YOUR RESPONSIBILITY</h3>
-        <p class="text-lg text-gray-600 mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-
-        <h3 class="text-2xl font-semibold  mb-4">PAYMENT TERMS AND FEES</h3>
-        <p class="text-lg text-gray-600 mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod justo eu nisl suscipit, sed auctor dui interdum. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
-        </p>
-
-        <h3 class="text-2xl font-semibold  mb-4">LEGAL ACTION</h3>
-        <p class="text-lg text-gray-600 mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac felis sit amet justo aliquet volutpat. Quisque sit amet lectus a orci dictum ullamcorper. Nulla facilisi. Integer nec odio. Sed nisi.
-        </p>
-
-        <h3 class="text-2xl font-semibold mb-4">This Agreement</h3>
-        <p class="text-lg text-gray-600 mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod justo eu nisl suscipit, sed auctor dui interdum. Quisque sit amet lectus a orci dictum ullamcorper. Nulla facilisi.
-        </p>
-
-        <h3 class="text-2xl font-semibold  mb-4">FORCE MAJEURE</h3>
-        <p class="text-lg text-gray-600 mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at purus id lacus malesuada volutpat. Fusce ac felis sit amet justo aliquet volutpat. Integer nec odio. Sed cursus ante dapibus diam.
-        </p>
-
-        <h3 class="text-2xl font-semibold  mb-4">Disclaimer</h3>
-        <p class="text-lg text-gray-600 mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac felis sit amet justo aliquet volutpat. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-
-        <div class="mt-12">
-            <h4 class="text-xl font-semibold  mb-4">Google Reviews</h4>
-            <p class="text-lg text-gray-600 mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-        </div>
-    </div>
-</section>
 
 
+  <div class="max-w-4xl mx-auto bg-white p-8 ">
+    <h1 class="text-3xl font-bold text-center text-bgColorDark mb-6">Sitemap</h1>
+    
+    <ul class="space-y-4 list-disc pl-5">
+        <!-- Home -->
+        <li class="text-xl font-semibold">
+            <a href="/index.html" class="text-bgColorDark hover:text-yellowDark hover:underline">Home</a>
+        </li>
+
+        <!-- Services -->
+        <li class="text-xl font-semibold">
+            <a href="/pages/service.html" class="text-bgColorDark hover:text-yellowDark hover:underline">Services</a>
+            <ul class="ml-6 list-disc text-gray-600">
+                <li>
+                    <a href="/pages/plumbing.html" class="text-bgColorDark hover:text-yellowDark hover:underline">Plumbing </a>
+                </li>
+                <li>
+                    <a href="/pages/drain.html" class="text-bgColorDark hover:text-yellowDark hover:underline">Drainage</a>
+                </li>
+                <li>
+                    <a href="/pages/heating.html" class="text-bgColorDark hover:text-yellowDark hover:underline">Heating & Cooling</a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Service Areas -->
+        <li class="text-xl font-semibold">
+            <a href="/pages/servicearea.html" class="text-bgColorDark hover:text-yellowDark hover:underline">Service Areas</a>
+            <ul class="ml-6 list-disc text-gray-600">
+                <li>
+                    <a href="/pages/location.html" class="text-bgColorDark hover:text-yellowDark hover:underline">Location 1</a>
+                </li>
+                <li>
+                    <a href="/pages/location.html" class="text-bgColorDark hover:text-yellowDark hover:underline">Location 2</a>
+                </li>
+                <li>
+                    <a href="/pages/location.html" class="text-bgColorDark hover:text-yellowDark hover:underline">Location 3</a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- About Us -->
+        <li class="text-xl font-semibold">
+            <a href="/pages/about.html" class="text-bgColorDark hover:text-yellowDark hover:underline">About Us</a>
+        </li>
+
+        <!-- Blog -->
+        <li class="text-xl font-semibold">
+            <a href="/pages/blog.html" class="text-bgColorDark hover:text-yellowDark hover:underline">Blog</a>
+        </li>
+
+        <!-- Contact Us -->
+        <li class="text-xl font-semibold">
+            <a href="/pages/contact.html" class="text-bgColorDark hover:text-yellowDark hover:underline">Contact Us</a>
+        </li>
+    </ul>
+</div>
 
 
+<!-- Footer Section starts -->
+<div class="flex flex-col">
 
- 
   <!-- Footer Section at the End of the Page -->
   <footer class="bg-bgColorDark text-center py-10">
     <div class="max-w-screen-xl mx-auto px-4">
@@ -224,13 +202,13 @@ Hero section -->
           <h4 class="text-lg font-semibold text-yellowLight">Quick Links</h4>
           <ul class="mt-2 space-y-2">
             <li><a href="../index.html" class="hover:text-yellowLight">Home</a></li>
-            <li><a href="service.html" class="hover:text-yellowLight">Services</a></li>
-            <li><a href="servicearea.html" class="hover:text-yellowLight">Area Served</a></li>
-            <li><a href="about.html" class="hover:text-yellowLight">About Us</a></li>
-            <li><a href="blog.html" class="hover:text-yellowLight">Blog</a></li>
-            <li><a href="contact.html" class="hover:text-yellowLight">Contact</a></li>
-            <li><a href="../sitemap.html" class="hover:text-yellowLight">Sitemap</a></li>
-
+            <li><a href="./pages/service.html" class="hover:text-yellowLight">Services</a></li>
+            <li><a href="./pages/servicearea.html" class="hover:text-yellowLight">Area Served</a></li>
+            <li><a href="./pages/about.html" class="hover:text-yellowLight">About Us</a></li>
+            <li><a href="./pages/blog.html" class="hover:text-yellowLight">Blog</a></li>
+            <li><a href="./pages/contact.html" class="hover:text-yellowLight">Contact</a></li>
+            <li><a href="sitemap.html" class="hover:text-yellowLight">Sitemap</a></li>
+           
             
           </ul>
         </div>
@@ -268,8 +246,8 @@ Hero section -->
       <div class="border-t border-grayLight pt-4">
         <div class="flex justify-center items-center">
           <p class="text-sm text-white">© 2024 Your Company. All rights reserved.</p>
-          <a href="privacy.html" class="text-sm text-white mx-2">| Privacy Policy</a>
-          <a href="terms.html" class="text-sm text-white">| Terms & Conditions</a>
+          <a href="./pages/privacy.html" class="text-sm text-white mx-2">| Privacy Policy</a>
+          <a href="./pages/terms.html" class="text-sm text-white">| Terms & Conditions</a>
         </div>
       </div>
 
@@ -278,6 +256,7 @@ Hero section -->
 </div>
   <!-- Footer Section ends -->
   
+
 
 </body>
 

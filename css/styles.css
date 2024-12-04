@@ -1,6 +1,5 @@
 
 
-
 /* nav-bar */
   .dropdown-content {
     min-width: 150px;
@@ -81,6 +80,24 @@
       display: none;
     }
   }
+/* hero-section-animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.5s ease-out;
+}
+
+
+
 
 /* why choose us section */
 
@@ -205,4 +222,7 @@
       padding: 12px 24px;
     }
   }
-  
+  /* blog-page */
+  .blog-card {
+    transition: transform 0.3s ease;
+  }

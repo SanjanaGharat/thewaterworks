@@ -50,9 +50,25 @@
       <div class="hidden lg:flex space-x-8 items-center justify-center w-full text-lg">
         <a href="../index.html" class="hover:text-bgBlueHover">Home</a>
         <span>|</span>
-        <a href="service.html" class="hover:text-bgBlueHover">Services</a>
+        <div class="relative group">
+          <button class="hover:text-bgBlueHover flex items-center space-x-2">
+            <a href="service.html">
+              <span>Services</span>
+            </a>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          <!-- Dropdown -->
+          <div class="absolute left-1/2 -translate-x-1/2 mt-2 hidden group-hover:block bg-white text-black shadow-lg rounded-lg py-2 dropdown-content">
+            <a href="plumbing.html" class="block px-4 py-2 hover:bg-bgColorLight">Plumbing</a>
+            <a href="drain.html" class="block px-4 py-2 hover:bg-bgColorLight">Drain</a>
+            <a href="heating.html" class="block px-4 py-2 hover:bg-bgColorLight">Heating&Cooling</a>
+          </div>
+        </div>
         <span>|</span>
-        <a href="servicearea.html" class="hover:text-bgBlueHover">Service Areas</a>
+        <a href="servicearea.html" class="hover:text-bgBlueHover">Area Served</a>
         <span>|</span>
         <a href="about.html" class="hover:text-bgBlueHover">About</a>
         <span>|</span>
@@ -80,8 +96,22 @@
   </button>
   <div class="mt-20 px-6">
     <a href="../index.html" class="block py-2 hover:text-bgBlueHover">Home</a>
-    <a href="service.html" class="mt-4 block py-2 hover:text-bgBlueHover">Services</a>
-    <a href="servicearea.html" class="mt-4 block py-2 hover:text-bgBlueHover">Service Areas</a>
+    <div class="mt-4">
+      <button class="flex items-center justify-between w-full py-2 hover:text-bgBlueHover" data-dropdown="services">
+        <a href="service.html" class="text-left">
+          <span>Services</span>
+        </a>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div id="dropdown-services" class="pl-4 hidden">
+        <a href="plumbing.html" class="block py-2 hover:text-bgBlueHover">Plumbing</a>
+        <a href="drain.html" class="block py-2 hover:text-bgBlueHover">Drain</a>
+        <a href="heating.html" class="block py-2 hover:text-bgBlueHover">Heating&Cooling</a>
+      </div>
+    </div>
+    <a href="servicearea.html" class="mt-4 block py-2 hover:text-bgBlueHover">Area Served</a>
     <a href="about.html" class="mt-4 block py-2 hover:text-bgBlueHover">About</a>
     <a href="blog.html" class="mt-4 block py-2 hover:text-bgBlueHover">Blog</a>
     <a href="contact.html" class="mt-4 block py-2 hover:text-bgBlueHover">Contact us</a>
@@ -105,24 +135,6 @@ Hero section -->
 </section>
 
 
-<!-- Animation Styles -->
-<style>
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .animate-fade-in {
-        animation: fadeIn 1.5s ease-out;
-    }
-</style>
-
 
 <!-- careers-section -->
 <section id="careers" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
@@ -144,7 +156,7 @@ Hero section -->
         href="contact.html"
         class="inline-block px-12 py-6 text-lg font-semibold text-white bg-gradient-to-r from-bgColorLight to-bgColorDark rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl"
       >
-        Explore Now
+        Contact Now
       </a>
     </div>
 
@@ -160,34 +172,7 @@ Hero section -->
   </div>
 </section>
 
-<!-- green bg section  -->
-  <section id="greensection" class="w-full bg-gradient-to-r from-greenGradientStart to-greenLight text-white px-6 py-16 text-center  animate-gradient">
-    <p id="greensection-text" class="text-2xl sm:text-3xl md:text-4xl font-serif">
-      With a humble beginning as a small drain cleaning company in 1986, The Waterworks has grown into central Ohio’s leading plumbing, drain, heating, and cooling service provider.
-    </p>
-  </section>
   
-<style>
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-#greensection {
-  background: linear-gradient(to right, #499278, #319e34, #47ab4c);
-  background-size: 300% 300%;
-  animation: gradientAnimation 8s ease infinite;
-}
-
-
-</style>  
   
 <!-- blue bg section  -->
 <div class="bg-gradient-to-r from-bgColorDark to-bgBlueHover text-grayDark">
@@ -240,10 +225,10 @@ Hero section -->
         </ul>
 
         <a
-          href="contact.html"
+          href="service.html"
           class="inline-block px-12 py-4 text-lg font-semibold text-white bg-yellowDark rounded-full shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-xl mt-6"
         >
-          Explore Now
+          Explore Services
         </a>
       </div>
     </div>
@@ -301,98 +286,6 @@ Hero section -->
 
 </div>
 
-<!-- button heading section -->
-<div class="bg-white text-grayDark">
-
-  <section class="max-w-7xl mx-auto px-6 py-10 border-t border-b border-yellowBorder relative">
-    <div class="flex flex-col md:flex-row items-start gap-8">
-      <!-- Left Section with Rounded Buttons (Stacked Vertically) -->
-      <div class="w-full md:w-1/3 text-center md:text-left relative">
-        <h2 class="text-3xl font-bold text-bgColorDark mb-6">The Waterworks<br>company is…</h2>
-        <!-- 4 Rounded Buttons with Hover Interaction, Vertically Stacked -->
-        <div class="space-y-4">
-          <button class="w-1/2 mx-auto py-2 px-4 bg-yellowLight text-grayDark font-semibold rounded-full hover:bg-grayLight transition-colors text-sm group" data-target="content-1">
-            Trusted
-          </button>
-          <button class="w-1/2 mx-auto py-2 px-4 bg-yellowLight text-grayDark font-semibold rounded-full hover:bg-grayLight transition-colors text-sm group" data-target="content-2">
-            Experienced
-          </button>
-          <button class="w-1/2 mx-auto py-2 px-4 bg-yellowLight text-grayDark font-semibold rounded-full hover:bg-grayLight transition-colors text-sm group" data-target="content-3">
-            Responsive
-          </button>
-          <button class="w-1/2 mx-auto py-2 px-4 bg-yellowLight text-grayDark font-semibold rounded-full hover:bg-grayLight transition-colors text-sm group" data-target="content-4">
-            Budget-Sensitive
-          </button>
-        </div>
-        
-      </div>
-
-      <!-- Yellow Vertical Line (for larger screens) -->
-      <div class="hidden md:block absolute top-0 bottom-0 left-1/3 border-l border-yellowBorder"></div>
-
-      <!-- Right Section with Corresponding Content -->
-      <div class="w-full md:w-2/3">
-        <!-- Subheading and Paragraphs for each heading -->
-        <div class="space-y-6">
-          <!-- Heading 1 Content -->
-          <div class="content-item" id="content-1">
-            <h3 class="text-2xl font-semibold text-bgColorDark mb-3">We are trusted.</h3>
-            <p class="text-lg text-grayDark">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
-            </p>
-          </div>
-          <!-- Heading 2 Content -->
-          <div class="content-item" id="content-2">
-            <h3 class="text-2xl font-semibold text-bgColorDark mb-3">We are experienced.</h3>
-            <p class="text-lg text-grayDark">
-              Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent.
-            </p>
-          </div>
-          <!-- Heading 3 Content -->
-          <div class="content-item" id="content-3">
-            <h3 class="text-2xl font-semibold text-bgColorDark mb-3">We are responsive.</h3>
-            <p class="text-lg text-grayDark">
-              Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus.
-            </p>
-          </div>
-          <!-- Heading 4 Content -->
-          <div class="content-item" id="content-4">
-            <h3 class="text-2xl font-semibold text-bgColorDark mb-3">We are budget-sensitive.</h3>
-            <p class="text-lg text-grayDark">
-              Phasellus viverra nulla ut metus varius laoreet. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</div>
-<script>
-  const buttons = document.querySelectorAll('.group');
-  const contents = document.querySelectorAll('.content-item');
-
-  buttons.forEach((button) => {
-    // Add mouseenter event
-    button.addEventListener('mouseenter', () => {
-      const targetId = button.getAttribute('data-target'); 
-      contents.forEach((content) => {
-        if (content.id === targetId) {
-          content.classList.add('bg-grayLight', 'p-4', 'transition-all', 'duration-300');
-          content.classList.remove('bg-opacity-30');
-        } else {
-          content.classList.remove('bg-grayLight', 'p-4');
-          content.classList.add('bg-opacity-30');
-        }
-      });
-    });
-    button.addEventListener('mouseleave', () => {
-      contents.forEach((content) => {
-        content.classList.remove('bg-grayLight', 'p-4', 'bg-opacity-30');
-      });
-    });
-  });
-</script>
 
 <!-- area-served-section -->
 <div class="bg-white text-grayDark">
@@ -401,7 +294,7 @@ Hero section -->
     <div class="flex flex-col md:flex-row items-start gap-8">
       <!-- Left Section  -->
       <div class="w-full md:w-1/3 text-center md:text-left relative">
-        <h2 class="text-3xl font-bold text-bgColorDark mb-6">Lorem Ipsum</h2>
+        <h2 class="text-3xl font-bold text-bgColorDark mb-6">Service Sector</h2>
       </div>
 
       <!-- Vertical Line for Larger Screens -->
@@ -544,141 +437,7 @@ Hero section -->
   }
   </style>
 
-<!-- quote section -->
-<section id="quote-section" class="relative bg-gradient-to-r py-4 px-6 flex justify-center items-center overflow-hidden animate-gradient" style="min-height: 30vh;">
-  <div class="relative text-center text-white max-w-7xl mx-auto">
-    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 text-[1.8rem] text-gray-900 opacity-0 font-extrabold leading-none quote-icon">
-      “
-    </div>
-    <blockquote class="mt-4 text-lg font-bold text-gray-900 opacity-0 leading-tight quote-text">
-      "If I could give Bradley 10 out of 10 stars, I would."
-    </blockquote>
-    <p class="mt-4 text-sm font-medium text-gray-800 opacity-0 quote-paragraph max-w-2xl mx-auto">
-      He was so professional and knowledgeable – got it done so quickly. It’s amazing – someone with real experience and professionalism. I will use The Waterworks again.
-    </p>
-    <p class="mt-4 text-xs font-light text-gray-700 italic opacity-0 quote-author max-w-xl mx-auto">– Kimberly N, Columbus</p>
-    <div class="mt-4 border-t-2 border-gray-800 mx-auto w-8 opacity-0 quote-line"></div>
-  </div>
-</section>
 
-<style>
-   .animate-gradient {
-  background: linear-gradient(90deg, #f59e0b, #fbbf24, #fcd34d);
-  background-size: 400% 400%;
-  animation: gradient-shift 6s ease infinite;
-}
-
-@keyframes gradient-shift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.animate-bounceIn {
-animation: bounce-in 1.2s ease-out forwards; 
-}
-
-
-@keyframes bounce-in {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px) scale(0.8);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(5px) scale(1.1);
-  }
-  100% {
-    transform: translateY(0) scale(1);
-  }
-}
-
-.animate-slideInUp {
-  animation: slide-in-up 1.2s ease-out forwards;
-}
-
-@keyframes slide-in-up {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fadeInDelay {
-  animation: fade-in 1.8s ease forwards 0.3s;
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-scaleIn {
-  animation: scale-in 1.2s ease-out forwards 0.6s;
-}
-
-@keyframes scale-in {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@media (max-width: 768px) {
-  section {
-    padding: 6vh 2vw;
-  }
-  .quote-icon {
-    top: -6px;
-    font-size: 1.6rem;
-  }
-  blockquote {
-    font-size: 1.4rem;
-  }
-  p {
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 480px) {
-  section {
-    padding: 8vh 4vw;
-    min-height: 35vh;
-  }
-  .quote-icon {
-    top: -4px;
-    font-size: 1.4rem;
-  }
-  blockquote {
-    font-size: 1.2rem;
-  }
-  p {
-    font-size: 0.75rem;
-    line-height: 1.4;
-  }
-}
-
-</style>
 
 
 <!-- three-button-section -->
@@ -744,11 +503,11 @@ animation: bounce-in 1.2s ease-out forwards;
           <ul class="mt-2 space-y-2">
             <li><a href="../index.html" class="hover:text-yellowLight">Home</a></li>
             <li><a href="service.html" class="hover:text-yellowLight">Services</a></li>
-            <li><a href="servicearea.html" class="hover:text-yellowLight">Service areas</a></li>
+            <li><a href="servicearea.html" class="hover:text-yellowLight">Area Served</a></li>
             <li><a href="about.html" class="hover:text-yellowLight">About Us</a></li>
             <li><a href="blog.html" class="hover:text-yellowLight">Blog</a></li>
             <li><a href="contact.html" class="hover:text-yellowLight">Contact</a></li>
-           
+            <li><a href="../sitemap.html" class="hover:text-yellowLight">Sitemap</a></li>
             
           </ul>
         </div>
